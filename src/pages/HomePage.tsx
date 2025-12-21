@@ -1,13 +1,31 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export function HomePage() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload image and set loaded state
+    const img = new Image();
+    img.src = '/home1.webp';
+    img.onload = () => setImageLoaded(true);
+    
+    // If image is already cached, set loaded immediately
+    if (img.complete) {
+      setImageLoaded(true);
+    }
+  }, []);
   return (
     <div>
       <section className="relative min-h-screen flex items-center justify-center">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ backgroundImage: "url('/home1.webp')" }}
         />
+        {/* Fallback gradient while image loads */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+        )}
         <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
