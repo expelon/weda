@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 export function HomePage() {
   return (
     <div>
-      <section className="relative min-h-screen">
+      <section className="relative min-h-screen flex items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/home1.webp')" }}
         />
         <div className="absolute inset-0 bg-black/45" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="pt-32 sm:pt-40 lg:pt-48 pb-14 sm:pb-20">
-            <div className="max-w-5xl text-center mx-auto">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="max-w-5xl mx-auto">
               <motion.h1 
-                className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight mt-40 sm:mt-0"
+                className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
@@ -26,7 +26,7 @@ export function HomePage() {
                 Empowering Women Entrepreneurs of North Karnataka
               </motion.h1>
               <motion.p 
-                className="mt-4 text-sm sm:text-base text-white/90 text-center"
+                className="mt-6 text-sm sm:text-base lg:text-lg text-white/90 max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
