@@ -285,7 +285,7 @@ export function HomePage() {
             {/* Event/Award Card 1 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/about.webp" 
+                src="/15.webp" 
                 alt="Annual Exhibition" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -294,7 +294,7 @@ export function HomePage() {
             {/* Event/Award Card 2 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/about2.webp" 
+                src="/30.webp" 
                 alt="Leadership Summit" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -303,7 +303,7 @@ export function HomePage() {
             {/* Event/Award Card 3 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/about3.webp" 
+                src="/13.webp" 
                 alt="Recognition Awards" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -312,7 +312,7 @@ export function HomePage() {
             {/* Event/Award Card 4 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/impact.webp" 
+                src="/1.webp" 
                 alt="Workshop Series" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -321,7 +321,7 @@ export function HomePage() {
             {/* Event/Award Card 5 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/about.webp" 
+                src="/26.webp" 
                 alt="Community Fair" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -330,7 +330,7 @@ export function HomePage() {
             {/* Event/Award Card 6 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/about2.webp" 
+                src="/about.webp" 
                 alt="Achievement Ceremony" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />

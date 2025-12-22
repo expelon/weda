@@ -1,18 +1,70 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export const GalleryPage = () => {
-  const galleryImages = [
-    { id: 1, src: '/about.webp', alt: 'Annual Exhibition', category: 'Events' },
-    { id: 2, src: '/about2.webp', alt: 'Leadership Summit', category: 'Events' },
-    { id: 3, src: '/about3.webp', alt: 'Recognition Awards', category: 'Awards' },
-    { id: 4, src: '/impact.webp', alt: 'Workshop Series', category: 'Events' },
-    { id: 5, src: '/about.webp', alt: 'Community Fair', category: 'Events' },
-    { id: 6, src: '/about2.webp', alt: 'Achievement Ceremony', category: 'Awards' },
-    { id: 7, src: '/about3.webp', alt: 'Women Entrepreneur Meet', category: 'Events' },
-    { id: 8, src: '/impact.webp', alt: 'Excellence Awards 2023', category: 'Awards' },
-    { id: 9, src: '/about.webp', alt: 'Skill Development Workshop', category: 'Events' },
+  const allImages = [
+    { id: 1, src: '/1.webp', alt: 'Event 1', category: 'Events' },
+    { id: 2, src: '/2.webp', alt: 'Event 2', category: 'Events' },
+    { id: 3, src: '/3.webp', alt: 'Event 3', category: 'Events' },
+    { id: 4, src: '/4.webp', alt: 'Event 4', category: 'Events' },
+    { id: 5, src: '/5.webp', alt: 'Event 5', category: 'Events' },
+    { id: 6, src: '/6.webp', alt: 'Event 6', category: 'Events' },
+    { id: 7, src: '/7.webp', alt: 'Event 7', category: 'Events' },
+    { id: 8, src: '/8.webp', alt: 'Event 8', category: 'Events' },
+    { id: 9, src: '/9.webp', alt: 'Event 9', category: 'Events' },
+    { id: 10, src: '/10.webp', alt: 'Event 10', category: 'Events' },
+    { id: 11, src: '/11.webp', alt: 'Event 11', category: 'Events' },
+    { id: 12, src: '/12.webp', alt: 'Event 12', category: 'Events' },
+    { id: 13, src: '/13.webp', alt: 'Event 13', category: 'Events' },
+    { id: 14, src: '/14.webp', alt: 'Event 14', category: 'Events' },
+    { id: 15, src: '/15.webp', alt: 'Event 15', category: 'Events' },
+    { id: 16, src: '/16.webp', alt: 'Event 16', category: 'Events' },
+    { id: 17, src: '/17.webp', alt: 'Event 17', category: 'Events' },
+    { id: 18, src: '/18.webp', alt: 'Event 18', category: 'Events' },
+    { id: 19, src: '/19.webp', alt: 'Event 19', category: 'Events' },
+    { id: 20, src: '/20.webp', alt: 'Event 20', category: 'Events' },
+    { id: 21, src: '/21.webp', alt: 'Event 21', category: 'Events' },
+    { id: 22, src: '/22.webp', alt: 'Event 22', category: 'Events' },
+    { id: 23, src: '/23.webp', alt: 'Event 23', category: 'Events' },
+    { id: 24, src: '/24.webp', alt: 'Event 24', category: 'Events' },
+    { id: 25, src: '/25.webp', alt: 'Event 25', category: 'Events' },
+    { id: 26, src: '/26.webp', alt: 'Event 26', category: 'Events' },
+    { id: 27, src: '/27.webp', alt: 'Event 27', category: 'Events' },
+    { id: 28, src: '/28.webp', alt: 'Event 28', category: 'Events' },
+    { id: 29, src: '/29.webp', alt: 'Event 29', category: 'Events' },
+    { id: 30, src: '/30.webp', alt: 'Event 30', category: 'Events' },
+    { id: 31, src: '/home1.webp', alt: 'Home Event', category: 'Events' },
+    { id: 32, src: '/who.webp', alt: 'Who We Are', category: 'Events' },
+    { id: 33, src: '/impact.webp', alt: 'Impact', category: 'Awards' },
+    { id: 34, src: '/about.webp', alt: 'About Us', category: 'Awards' },
+    { id: 35, src: '/about2.webp', alt: 'About Us 2', category: 'Awards' },
+    { id: 36, src: '/about3.webp', alt: 'About Us 3', category: 'Awards' },
   ];
+
+  // Shuffle the images array
+  const shuffleArray = (array: any[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const galleryImages = useMemo(() => shuffleArray(allImages), []);
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const imagesPerPage = 9;
+
+  // Calculate pagination
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = galleryImages.slice(indexOfFirstImage, indexOfLastImage);
+  const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,7 +98,7 @@ export const GalleryPage = () => {
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {galleryImages.map((image, index) => (
+            {currentImages.map((image, index) => (
               <motion.div
                 key={image.id}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -62,12 +114,62 @@ export const GalleryPage = () => {
                   <img 
                     src={image.src} 
                     alt={image.alt} 
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Pagination */}
+          <div className="mt-12 flex justify-center">
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => paginate(currentPage - 1)}
+                disabled={currentPage === 1}
+                className={`px-3 py-2 rounded-lg font-medium transition-colors ${
+                  currentPage === 1
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-700 hover:bg-orange-100 hover:text-orange-600 border border-gray-300'
+                }`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <div className="flex space-x-1">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+                  <button
+                    key={pageNumber}
+                    onClick={() => paginate(pageNumber)}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      currentPage === pageNumber
+                        ? 'bg-orange-600 text-white'
+                        : 'bg-white text-gray-700 hover:bg-orange-100 hover:text-orange-600 border border-gray-300'
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={() => paginate(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className={`px-3 py-2 rounded-lg font-medium transition-colors ${
+                  currentPage === totalPages
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-700 hover:bg-orange-100 hover:text-orange-600 border border-gray-300'
+                }`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
