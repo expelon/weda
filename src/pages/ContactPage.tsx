@@ -21,7 +21,7 @@ export function ContactPage() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 mt-16">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 mt-16">
               Register with WEDA
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

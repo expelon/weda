@@ -84,7 +84,7 @@ export const GalleryPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 mt-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#2E4A9F] mb-6 mt-12">
               Events & Achievements
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
