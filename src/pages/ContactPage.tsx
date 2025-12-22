@@ -41,7 +41,7 @@ export function ContactPage() {
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Name
+                    Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -55,7 +55,7 @@ export function ContactPage() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
+                    Email <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -69,7 +69,7 @@ export function ContactPage() {
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
+                    Phone Number <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -83,7 +83,7 @@ export function ContactPage() {
 
                 <div>
                   <label htmlFor="business-type" className="block text-sm font-medium text-gray-700 mb-2">
-                    Type of Business
+                    Type of Business <span className="text-red-500">*</span>
                   </label>
                   <select
                     id="business-type"
@@ -108,7 +108,7 @@ export function ContactPage() {
 
                 <div>
                   <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
-                    City
+                    City <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -166,7 +166,12 @@ export function ContactPage() {
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                      <p className="text-gray-600">+91 9448377717</p>
+                      <a 
+                        href="tel:+919448377717" 
+                        className="text-gray-600 hover:text-orange-600 transition-colors"
+                      >
+                        +91 9448377717
+                      </a>
                     </div>
                   </div>
 
@@ -178,7 +183,14 @@ export function ContactPage() {
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-gray-900">WhatsApp</h3>
-                      <p className="text-gray-600">+91 94483 77717</p>
+                      <a 
+                        href="https://wa.me/919448377717" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-green-600 transition-colors"
+                      >
+                        +91 94483 77717
+                      </a>
                     </div>
                   </div>
 
@@ -190,8 +202,18 @@ export function ContactPage() {
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                      <p className="text-gray-600">wedank2009@gmail.com</p>
-                      <p className="text-gray-600">rathi.creations.24@gmail.com</p>
+                      <a 
+                        href="mailto:wedank2009@gmail.com" 
+                        className="text-gray-600 hover:text-orange-600 transition-colors block"
+                      >
+                        wedank2009@gmail.com
+                      </a>
+                      <a 
+                        href="mailto:rathi.creations.24@gmail.com" 
+                        className="text-gray-600 hover:text-orange-600 transition-colors block"
+                      >
+                        rathi.creations.24@gmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
