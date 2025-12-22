@@ -537,6 +537,69 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Meet the dedicated women leading WEDA and empowering our community
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { name: "Mrs. Rathi Shrinivasan", role: "President" },
+              { name: "Mrs. Renu Mudholkar", role: "Vice President" },
+              { name: "Mrs. Jyothi Hiremath", role: "Secretary" },
+              { name: "Mrs. Bharathi Upadhya", role: "Joint Secretary" },
+              { name: "Mrs. Rajeshwari Navale", role: "Treasurer" },
+              { name: "Mrs. Kamala Deshpande", role: "EC Member" }
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.3 + index * 0.08, 
+                  ease: [0.25, 0.1, 0.25, 1] 
+                }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-orange-600 font-semibold text-center">
+                    {member.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link
+              to="/about"
+              className="inline-flex items-center px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              View All Team Members
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Add CSS for scrolling animation */}
       <style type="text/css">{`
         @keyframes scroll-x {
