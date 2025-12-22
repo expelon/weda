@@ -605,20 +605,26 @@ export function HomePage() {
         .animate-scroll-x {
           animation: scroll-x 40s linear infinite;
           width: fit-content;
-          will-change: transform;
-          transform: translateZ(0);
-          backface-visibility: hidden;
-          perspective: 1000px;
         }
         
         .animate-scroll-x:hover {
           animation-play-state: running;
         }
         
+        /* Optimize for smaller screens */
+        @media (max-width: 768px) {
+          .animate-scroll-x {
+            animation: scroll-x 60s linear infinite;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .animate-scroll-x {
+            animation: scroll-x 80s linear infinite;
+          }
+        }
+        
         .sector-card {
-          will-change: transform;
-          transform: translateZ(0);
-          backface-visibility: hidden;
           position: relative;
           overflow: hidden;
         }
@@ -661,14 +667,30 @@ export function HomePage() {
         }
         
         @keyframes premium-shimmer {
-          0% {
+          0%, 100% {
             background-position: 0% 50%;
           }
           50% {
             background-position: 100% 50%;
           }
-          100% {
-            background-position: 0% 50%;
+        }
+        
+        @keyframes premium-orbital {
+          0%, 100% {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 0.4;
+          }
+          50% {
+            transform: translate(30%, 30%) rotate(180deg);
+            opacity: 0.8;
+          }
+        }
+        
+        /* Disable complex animations on small screens for better performance */
+        @media (max-width: 640px) {
+          .sector-card::before,
+          .sector-card::after {
+            animation: none;
           }
         }
       `}</style>
