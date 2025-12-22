@@ -175,7 +175,7 @@ export function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">Our Target</h3>
+                    <h3 className="text-xl font-semibold text-[#2E4A9F]">Our Target</h3>
                     <p className="text-gray-600">5000+ women in the next 5 years</p>
                   </div>
                 </div>
