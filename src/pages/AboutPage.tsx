@@ -752,9 +752,6 @@ export function AboutPage() {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
               >
                 <div className="p-8">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold shadow-md">
-                    {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                  </div>
                   <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
                     {member.name}
                   </h3>

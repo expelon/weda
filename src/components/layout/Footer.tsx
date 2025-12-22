@@ -58,19 +58,41 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 9448377717</span>
+                <a 
+                  href="tel:+919448377717" 
+                  className="text-gray-300 text-sm hover:text-white transition-colors"
+                >
+                  +91 9448377717
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="h-5 w-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 94483 77717</span>
+                <a 
+                  href="https://wa.me/919448377717" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 text-sm hover:text-white transition-colors"
+                >
+                  +91 94483 77717
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm break-words">wedank2009@gmail.com</span>
+                <a 
+                  href="mailto:wedank2009@gmail.com" 
+                  className="text-gray-300 text-sm break-words hover:text-white transition-colors"
+                >
+                  wedank2009@gmail.com
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm break-words">rathi.creations.24@gmail.com</span>
+                <a 
+                  href="mailto:rathi.creations.24@gmail.com" 
+                  className="text-gray-300 text-sm break-words hover:text-white transition-colors"
+                >
+                  rathi.creations.24@gmail.com
+                </a>
               </div>
             </div>
           </div>
