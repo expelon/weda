@@ -377,7 +377,7 @@ export function AboutPage() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 bg-gradient-to-r from-[#2E4A9F] to-orange-600 bg-clip-text text-transparent leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 leading-tight">
               Conducted Major Training Programs & Workshops for Women
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6 rounded-full"></div>
