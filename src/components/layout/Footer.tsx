@@ -8,7 +8,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">WEDA</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/logo.png" 
+                alt="WEDA Logo" 
+                className="h-12 w-12 object-contain"
+              />
+              <h3 className="text-2xl font-bold">WEDA</h3>
+            </div>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed">
               North Karnataka Women Entrepreneur's Development Association (WEDA) is a charitable organization dedicated to empowering women through entrepreneurship and economic self-reliance.
             </p>
@@ -26,6 +33,11 @@ export function Footer() {
               <li>
                 <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -63,9 +75,14 @@ export function Footer() {
               &copy; {new Date().getFullYear()} WEDA. All rights reserved.
             </p>
             <div className="text-center sm:text-right">
-              <p className="text-gray-400 text-sm">
-                Empowering Women Entrepreneurs of North Karnataka Since 2009
-              </p>
+              <a
+                href="https://www.cheersdigitalmarketing.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 text-sm"
+              >
+                Developed by www.cheersdigitalmarketing.com
+              </a>
             </div>
           </div>
         </div>

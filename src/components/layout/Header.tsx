@@ -11,11 +11,13 @@ export function Header({ currentPath }: HeaderProps) {
   const location = useLocation();
   const activePath = currentPath || location.pathname;
   
-  // Determine if we're on the home page (hero section)
+  // Determine if we're on pages with hero sections (home or about)
   const isHomePage = activePath === '/';
-  const textColorClass = isHomePage ? 'text-white' : 'text-gray-900';
-  const hoverColorClass = isHomePage ? 'hover:text-white/90' : 'hover:text-gray-900';
-  const borderClass = isHomePage ? 'border-white' : 'border-gray-900';
+  const isAboutPage = activePath === '/about';
+  const hasHeroSection = isHomePage || isAboutPage;
+  const textColorClass = hasHeroSection ? 'text-white' : 'text-gray-900';
+  const hoverColorClass = hasHeroSection ? 'hover:text-white/90' : 'hover:text-gray-900';
+  const borderClass = hasHeroSection ? 'border-white' : 'border-gray-900';
 
   const isActive = (path: string) => {
     if (path === '/' && activePath === '/') return true;
@@ -28,7 +30,14 @@ export function Header({ currentPath }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className={`text-2xl font-bold ${textColorClass}`}>WEDA</h1>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="WEDA Logo" 
+                className="h-10 w-10 object-contain mr-2"
+              />
+              <h1 className={`text-2xl font-bold ${textColorClass}`}>WEDA</h1>
+            </Link>
           </div>
 
           <nav className="hidden md:flex space-x-8">
@@ -49,6 +58,14 @@ export function Header({ currentPath }: HeaderProps) {
               About
             </Link>
             <Link 
+              to="/gallery" 
+              className={`${textColorClass} ${hoverColorClass} px-3 py-2 text-base font-medium border-b-2 transition-all ${
+                isActive('/gallery') ? borderClass : 'border-transparent'
+              }`}
+            >
+              Gallery
+            </Link>
+            <Link 
               to="/contact" 
               className={`${textColorClass} ${hoverColorClass} px-3 py-2 text-base font-medium border-b-2 transition-all ${
                 isActive('/contact') ? borderClass : 'border-transparent'
@@ -61,9 +78,9 @@ export function Header({ currentPath }: HeaderProps) {
           <div className="hidden md:flex">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-2.5 text-base font-medium hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 text-base font-semibold"
             >
-              Contact Us
+              Register
             </Link>
           </div>
 
@@ -87,7 +104,14 @@ export function Header({ currentPath }: HeaderProps) {
             <div className="relative h-full flex flex-col">
               {/* Header */}
               <div className="flex justify-between items-center p-4 border-b border-white/20">
-                <h1 className="text-2xl font-bold text-white">WEDA</h1>
+                <Link to="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
+                  <img 
+                    src="/logo.png" 
+                    alt="WEDA Logo" 
+                    className="h-10 w-10 object-contain mr-2"
+                  />
+                  <h1 className="text-2xl font-bold text-white">WEDA</h1>
+                </Link>
                 <button
                   type="button"
                   className="inline-flex items-center justify-center p-2 text-white hover:text-white/90"
@@ -120,6 +144,15 @@ export function Header({ currentPath }: HeaderProps) {
                   About
                 </Link>
                 <Link
+                  to="/gallery"
+                  className={`block text-2xl font-medium text-white hover:text-white/90 transition-all transform hover:scale-105 ${
+                    isActive('/gallery') ? 'text-white drop-shadow-lg' : ''
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Gallery
+                </Link>
+                <Link
                   to="/contact"
                   className={`block text-2xl font-medium text-white hover:text-white/90 transition-all transform hover:scale-105 ${
                     isActive('/contact') ? 'text-white drop-shadow-lg' : ''
@@ -130,10 +163,10 @@ export function Header({ currentPath }: HeaderProps) {
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white text-blue-600 px-8 py-3 text-lg font-medium hover:bg-white/90 transition-all transform hover:scale-105 mt-8 shadow-xl"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 text-lg font-semibold mt-8"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Contact Us
+                  Register
                 </Link>
               </div>
             </div>

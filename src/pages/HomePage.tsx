@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 
 export function HomePage() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     // Preload image and set loaded state
     const img = new Image();
     img.src = '/home1.webp';
@@ -14,7 +20,32 @@ export function HomePage() {
     if (img.complete) {
       setImageLoaded(true);
     }
+
+    // Check if mobile screen
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  const handleBrochureClick = () => {
+    if (isMobile) {
+      // Download on mobile
+      const link = document.createElement('a');
+      link.href = '/brochure.pdf';
+      link.download = 'WEDA-Brochure.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // Open in new tab on desktop
+      window.open('/brochure.pdf', '_blank');
+    }
+  };
   return (
     <div>
       <section className="relative min-h-screen flex items-center justify-center">
@@ -26,7 +57,7 @@ export function HomePage() {
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
         )}
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-600/80 to-orange-600/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col items-center justify-center text-center">
@@ -41,7 +72,7 @@ export function HomePage() {
                   delay: 0.1
                 }}
               >
-                Empowering Women Entrepreneurs of North Karnataka
+                Empowering Women Entrepreneurs of <span className="text-orange-400">North Karnataka</span>
               </motion.h1>
               <motion.p 
                 className="mt-6 text-sm sm:text-base lg:text-lg text-white/90 max-w-4xl mx-auto"
@@ -55,17 +86,56 @@ export function HomePage() {
               >
                 North Karnataka Women Entrepreneur's Development Association (WEDA) is a charitable organization established in 2009 with a mission to empower women through entrepreneurship. We support women in becoming socially and economically self-reliant by providing skill development, training, product development, and market exposure at national and international levels.
               </motion.p>
+              <div className="mt-8 flex flex-row gap-4 justify-center items-center flex-wrap">
+                <motion.button 
+                  className="px-8 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 1.2, 
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.9
+                  }}
+                  onClick={handleBrochureClick}
+                >
+                  View Brochure
+                </motion.button>
+                <motion.button 
+                  className="px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 1.2, 
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 1.1
+                  }}
+                  onClick={() => navigate('/contact')}
+                >
+                  Contact Us
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Who We Are Section */}
-      <section className="bg-orange-50 py-16">
+      <section className="bg-gradient-to-br from-gray-50 to-orange-50/30 py-16 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div
-              className="text-center lg:text-left lg:order-first order-first"
+              className="rounded-lg h-64 lg:h-[32rem] overflow-hidden lg:order-first order-first relative"
+            >
+              <img 
+                src="/who.webp" 
+                alt="WEDA team working with women entrepreneurs" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+            </div>
+
+            <div
+              className="text-center lg:text-left lg:order-last order-last"
             >
               <h2 
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
@@ -78,17 +148,6 @@ export function HomePage() {
                 WEDA is a platform dedicated to supporting women entrepreneurs by enhancing their skills, confidence, and economic independence. We provide structured training, product development support, and marketing assistance to help women successfully enter local, national, and global markets.
               </p>
             </div>
-
-            <div
-              className="rounded-lg h-64 lg:h-[32rem] overflow-hidden lg:order-last order-last relative"
-            >
-              <img 
-                src="/who.webp" 
-                alt="WEDA team working with women entrepreneurs" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-            </div>
           </div>
         </div>
       </section>
@@ -97,19 +156,8 @@ export function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-            {/* Left Side - Image */}
-            <div className="relative lg:order-1 order-2">
-              <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-lg h-96">
-                <div 
-                  className="w-full h-full bg-cover bg-center rounded-2xl"
-                  style={{ backgroundImage: "url('/home1.webp')" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent rounded-2xl"></div>
-              </div>
-            </div>
-
-            {/* Right Side - Content */}
-            <div className="lg:order-2 order-1 text-center lg:text-left">
+            {/* Left Side - Content */}
+            <div className="lg:order-1 order-1 text-center lg:text-left">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Impact So Far</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Since 2009, WEDA has been actively empowering women entrepreneurs through continuous skill development programs. We organize exhibitions, workshops, and awareness initiatives, create market platforms for women-led businesses, and support the development of eco-friendly and traditional products—enabling sustainable growth and economic independence.
@@ -128,6 +176,17 @@ export function HomePage() {
                     <p className="text-gray-600">5000+ women in the next 5 years</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Right Side - Image */}
+            <div className="relative lg:order-2 order-2">
+              <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-lg h-96">
+                <div 
+                  className="w-full h-full bg-cover bg-center rounded-2xl"
+                  style={{ backgroundImage: "url('/impact.webp')" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent rounded-2xl"></div>
               </div>
             </div>
           </div>
@@ -206,6 +265,89 @@ export function HomePage() {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Events and Awards Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Events & Awards
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Celebrating our achievements and showcasing the vibrant events that empower our community
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Event/Award Card 1 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/about.webp" 
+                alt="Annual Exhibition" 
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Event/Award Card 2 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/about2.webp" 
+                alt="Leadership Summit" 
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Event/Award Card 3 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/about3.webp" 
+                alt="Recognition Awards" 
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Event/Award Card 4 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/impact.webp" 
+                alt="Workshop Series" 
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Event/Award Card 5 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/about.webp" 
+                alt="Community Fair" 
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Event/Award Card 6 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/about2.webp" 
+                alt="Achievement Ceremony" 
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          {/* View More Button */}
+          <div className="text-center mt-12">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              View More
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

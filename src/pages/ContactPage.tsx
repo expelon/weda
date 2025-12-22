@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export function ContactPage() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50/30">
       <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30 relative overflow-hidden">
@@ -16,10 +22,10 @@ export function ContactPage() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 mt-16">
-              Contact Us
+              Register with WEDA
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Get in touch with WEDA to learn more about our programs, partnerships, or how you can support women entrepreneurs in North Karnataka.
+              Join our community of women entrepreneurs in North Karnataka. Register to access our programs, networking opportunities, and support services.
             </p>
           </motion.div>
 
@@ -30,7 +36,7 @@ export function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Registration Form</h2>
               
               <form className="space-y-6">
                 <div>
@@ -41,8 +47,9 @@ export function ContactPage() {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
                     placeholder="Your name"
+                    required
                   />
                 </div>
 
@@ -54,21 +61,62 @@ export function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                    placeholder="Your message..."
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    placeholder="+91 98765 43210"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="business-type" className="block text-sm font-medium text-gray-700 mb-2">
+                    Type of Business
+                  </label>
+                  <select
+                    id="business-type"
+                    name="business-type"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    required
+                  >
+                    <option value="">Select your business type</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="retail">Retail</option>
+                    <option value="services">Services</option>
+                    <option value="agriculture">Agriculture</option>
+                    <option value="handicrafts">Handicrafts</option>
+                    <option value="food">Food & Beverages</option>
+                    <option value="textiles">Textiles</option>
+                    <option value="technology">Technology</option>
+                    <option value="education">Education</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                    City
+                  </label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    placeholder="Your city"
+                    required
                   />
                 </div>
 
@@ -76,7 +124,7 @@ export function ContactPage() {
                   type="submit"
                   className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-600 transition-colors"
                 >
-                  Send Message
+                  Submit Registration
                 </button>
               </form>
             </motion.div>
@@ -90,7 +138,7 @@ export function ContactPage() {
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h2>
                 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                       <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,22 +1,56 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export function AboutPage() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50/30">
+      {/* Hero Section with About Image */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/about.webp')" }}
+        />
+        
+        {/* Gradient Overlay - Same as Home Page */}
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-600/80 to-orange-600/60" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col items-center justify-center text-center">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            >
+              About WEDA
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed"
+            >
+              Empowering Women Entrepreneurs of <span className="text-orange-400">North Karnataka</span> Since 2009
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30 relative overflow-hidden">
         {/* Decorative Blurred Elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center"
-          >
+          <div className="text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 mt-16">
-              About WEDA
+              Our Mission & Vision
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               North Karnataka Women Entrepreneurs Development Association (WEDA) is a charitable organization established in 2009 and registered under the Charitable Acts of 1960/17, Government of Karnataka.
@@ -24,40 +58,80 @@ export function AboutPage() {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
               WEDA functions as a common platform for women to develop entrepreneurial capabilities, access training, adopt improved technologies, and gain exposure to markets. Our goal is to make women socially and economically self-reliant.
             </p>
-          </motion.div>
+          </div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-8 rounded-lg shadow-sm"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Our Mission
+              </h3>
               <p className="text-gray-600">
                 To empower women entrepreneurs through skill development, technology support, financial linkages, and access to national and global markets.
               </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-8 rounded-lg shadow-sm"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Our Vision
+              </h3>
               <p className="text-gray-600">
                 To emerge as a strong platform for women entrepreneurs with shared objectives, enabling sustainable growth and economic independence.
               </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-8 rounded-lg shadow-sm"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Established 2009</h3>
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Established 2009
+              </h3>
               <p className="text-gray-600">
                 For over a decade, we've been supporting women entrepreneurs with training, product development, and market exposure at national and international levels.
               </p>
@@ -218,7 +292,7 @@ export function AboutPage() {
               <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-lg h-96">
                 <div 
                   className="w-full h-full bg-cover bg-center rounded-2xl"
-                  style={{ backgroundImage: "url('/home1.webp')" }}
+                  style={{ backgroundImage: "url('/about2.webp')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent rounded-2xl"></div>
               </div>
@@ -240,7 +314,7 @@ export function AboutPage() {
               <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-lg h-96">
                 <div 
                   className="w-full h-full bg-cover bg-center rounded-2xl"
-                  style={{ backgroundImage: "url('/home1.webp')" }}
+                  style={{ backgroundImage: "url('/about3.webp')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent rounded-2xl"></div>
               </div>
@@ -632,6 +706,64 @@ export function AboutPage() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Meet the dedicated women leading WEDA and empowering our community
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { name: "Mrs. Rathi Shrinivasan", role: "President" },
+              { name: "Mrs. Renu Mudholkar", role: "Vice President" },
+              { name: "Mrs. Jyothi Hiremath", role: "Secretary" },
+              { name: "Mrs. Bharathi Upadhya", role: "Joint Secretary" },
+              { name: "Mrs. Rajeshwari Navale", role: "Treasurer" },
+              { name: "Mrs. Kamala Deshpande", role: "EC Member" },
+              { name: "Mrs. Rekha Porwale", role: "EC Member" },
+              { name: "Mrs. Roopa Rashinkar", role: "Co-ordinator" },
+              { name: "Mrs. Uma Ugalat", role: "Co-ordinator" },
+              { name: "Mrs. Raksha Hubballi", role: "Co-ordinator" }
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.3 + index * 0.08, 
+                  ease: [0.25, 0.1, 0.25, 1] 
+                }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                <div className="p-8">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                    {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-orange-600 font-semibold text-center">
+                    {member.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
