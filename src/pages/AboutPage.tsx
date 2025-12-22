@@ -49,7 +49,7 @@ export function AboutPage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 mt-16">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 mt-16">
               Our Mission & Vision
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -153,7 +153,7 @@ export function AboutPage() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Objectives of WEDA</h2>
+            <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Objectives of WEDA</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our comprehensive objectives guide our mission to empower women entrepreneurs across Karnataka
             </p>
@@ -166,7 +166,7 @@ export function AboutPage() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -180,7 +180,7 @@ export function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -194,7 +194,7 @@ export function AboutPage() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
@@ -208,7 +208,7 @@ export function AboutPage() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -222,7 +222,7 @@ export function AboutPage() {
               transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -236,7 +236,7 @@ export function AboutPage() {
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -253,7 +253,7 @@ export function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left Side - Content */}
             <div className="lg:order-1 order-2 text-center lg:text-left">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">What WEDA Needs (Support & Collaboration)</h2>
+              <h2 className="text-4xl font-bold text-[#2E4A9F] mb-6">What WEDA Needs (Support & Collaboration)</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 To expand our impact and reach more women entrepreneurs, WEDA seeks strategic support and collaboration partnerships that will enable us to scale our programs and create sustainable change.
               </p>
@@ -261,27 +261,27 @@ export function AboutPage() {
               {/* Support Items List */}
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Affiliation with Ministry of Skill Development & Entrepreneurship</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Financial assistance to establish a Common Facility Centre (CFC)</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Permanent exhibition and marketing hubs</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Support for exhibitions across Karnataka</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Scholarship grants for skill training seekers</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Empanelment with government agencies</span>
                 </div>
               </div>
@@ -322,7 +322,7 @@ export function AboutPage() {
 
             {/* Right Side - Content */}
             <div className="lg:order-2 order-1 text-center lg:text-left">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Future Vision of WEDA</h2>
+              <h2 className="text-4xl font-bold text-[#2E4A9F] mb-6">Future Vision of WEDA</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Our ambitious vision for the future focuses on creating comprehensive digital platforms and expanding our reach to empower more women entrepreneurs across Karnataka and beyond.
               </p>
@@ -330,31 +330,31 @@ export function AboutPage() {
               {/* Vision Items List */}
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Establish a unified platform for women entrepreneurs</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Launch myweda.com – E-commerce platform (Web & Mobile)</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Connect women with micro-finance institutions</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Build strong demand–supply chains for Indian & global buyers</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Empower 1,000 women every year</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Organize exhibitions at district and taluka levels</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-700 text-left">Involve SHGs at village level</span>
                 </div>
               </div>
@@ -377,7 +377,7 @@ export function AboutPage() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-gray-900 to-orange-600 bg-clip-text text-transparent leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 bg-gradient-to-r from-[#2E4A9F] to-orange-600 bg-clip-text text-transparent leading-tight">
               Conducted Major Training Programs & Workshops for Women
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6 rounded-full"></div>
@@ -720,7 +720,7 @@ export function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#2E4A9F] mb-4">Our Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Meet the dedicated women leading WEDA and empowering our community
             </p>
@@ -755,7 +755,7 @@ export function AboutPage() {
                   <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-orange-600 font-semibold text-center">
+                  <p className="font-semibold text-center" style={{ color: 'rgba(46, 74, 159, 0.9)' }}>
                     {member.role}
                   </p>
                 </div>
