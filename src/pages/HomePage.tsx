@@ -735,14 +735,19 @@ export function HomePage() {
             ].map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="relative bg-white/70 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/50 hover:-translate-y-1"
               >
-                <div className="p-8">
+                {/* Decorative gradient accents */}
+                <div className="pointer-events-none absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-300/30 to-indigo-300/30 rounded-full blur-2xl" />
+                <div className="pointer-events-none absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-tr from-sky-300/25 to-cyan-300/25 rounded-full blur-2xl" />
+                <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
                   <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
                     {member.name}
                   </h3>
-                  <p className="font-semibold text-center" style={{ color: 'rgba(46, 74, 159, 0.9)' }}>
-                    {member.role}
+                  <p className="mt-1">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow">
+                      {member.role}
+                    </span>
                   </p>
                 </div>
               </div>
