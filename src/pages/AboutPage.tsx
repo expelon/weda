@@ -1,11 +1,49 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function AboutPage() {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Custom hook for scroll animations
+  const useScrollAnimation = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+
+    return { ref, isVisible };
+  };
+
+  // Scroll animation hook for Mission & Vision section
+  const { ref: missionVisionRef, isVisible: missionVisionVisible } = useScrollAnimation();
+
+  // Scroll animation hook for Objectives section
+  const { ref: objectivesRef, isVisible: objectivesVisible } = useScrollAnimation();
+
+  // Scroll animation hook for What WEDA Needs section
+  const { ref: needsRef, isVisible: needsVisible } = useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50/30">
@@ -48,17 +86,23 @@ export function AboutPage() {
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
+          <motion.div
+            ref={missionVisionRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: missionVisionVisible ? 1 : 0, y: missionVisionVisible ? 0 : 30 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center mb-16"
+          >
             <h1 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 mt-16">
               Our Mission & Vision
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              North Karnataka Women Entrepreneurs Development Association (WEDA) is a charitable organization established in 2009 and registered under the Charitable Acts of 1960/17, Government of Karnataka.
+              North Karnataka Women Entrepreneurs Development Association (WEDA) is a charitable organization established in 2009 and registered under Charitable Acts of 1960/17, Government of Karnataka.
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
               WEDA functions as a common platform for women to develop entrepreneurial capabilities, access training, adopt improved technologies, and gain exposure to markets. Our goal is to make women socially and economically self-reliant.
             </p>
-          </div>
+          </motion.div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
@@ -148,9 +192,10 @@ export function AboutPage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
+            ref={objectivesRef}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Objectives of WEDA</h2>
@@ -162,7 +207,7 @@ export function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
@@ -176,7 +221,7 @@ export function AboutPage() {
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
@@ -190,7 +235,7 @@ export function AboutPage() {
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
@@ -204,7 +249,7 @@ export function AboutPage() {
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
@@ -218,7 +263,7 @@ export function AboutPage() {
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
@@ -232,7 +277,7 @@ export function AboutPage() {
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
@@ -250,7 +295,13 @@ export function AboutPage() {
       {/* What WEDA Needs (Support & Collaboration) Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+          <motion.div
+            ref={needsRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: needsVisible ? 1 : 0, y: needsVisible ? 0 : 40 }}
+            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center"
+          >
             {/* Left Side - Content */}
             <div className="lg:order-1 order-2 text-center lg:text-left">
               <h2 className="text-4xl font-bold text-[#2E4A9F] mb-6">What WEDA Needs (Support & Collaboration)</h2>
@@ -288,7 +339,12 @@ export function AboutPage() {
             </div>
 
             {/* Right Side - Image */}
-            <div className="relative lg:order-2 order-1">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: needsVisible ? 1 : 0, y: needsVisible ? 0 : 40 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="relative lg:order-2 order-1"
+            >
               <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-lg h-96">
                 <div 
                   className="w-full h-full bg-cover bg-center rounded-2xl"
@@ -296,8 +352,8 @@ export function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent rounded-2xl"></div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
