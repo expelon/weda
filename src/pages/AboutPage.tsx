@@ -118,7 +118,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -150,7 +150,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -183,7 +183,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -230,12 +230,12 @@ export function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden md:col-span-3 lg:col-span-5 min-h-[200px] bg-white/60 backdrop-blur-xl p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden md:col-span-3 lg:col-span-5 min-h-[200px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
-              <div className="absolute -top-6 -right-6 w-28 h-28 bg-gradient-to-br from-indigo-400/30 to-purple-400/30 rounded-full blur-2xl" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-400/20 to-blue-400/20 rounded-full blur-xl" />
+              <div className="absolute -top-6 -right-6 w-28 h-28 bg-gradient-to-br from-red-300/30 to-rose-300/30 rounded-full blur-2xl" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -248,12 +248,12 @@ export function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden md:col-span-3 lg:col-span-7 min-h-[220px] bg-white/60 backdrop-blur-xl p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden md:col-span-3 lg:col-span-7 min-h-[220px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
-              <div className="absolute -top-8 left-6 w-28 h-28 bg-gradient-to-br from-fuchsia-400/25 to-rose-400/25 rounded-full blur-2xl" />
-              <div className="absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-tr from-sky-400/20 to-indigo-400/20 rounded-full blur-xl" />
+              <div className="absolute -top-8 left-6 w-28 h-28 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+              <div className="absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -266,12 +266,12 @@ export function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden lg:col-span-6 min-h-[240px] bg-white/60 backdrop-blur-xl p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden lg:col-span-6 min-h-[240px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
-              <div className="absolute top-4 right-8 w-24 h-24 bg-gradient-to-br from-violet-400/25 to-indigo-400/25 rounded-full blur-2xl" />
-              <div className="absolute -bottom-6 left-6 w-28 h-28 bg-gradient-to-tr from-cyan-400/20 to-teal-400/20 rounded-full blur-2xl" />
+              <div className="absolute top-4 right-8 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+              <div className="absolute -bottom-6 left-6 w-28 h-28 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-2xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
@@ -284,12 +284,12 @@ export function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden lg:col-span-6 min-h-[220px] bg-white/60 backdrop-blur-xl p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden lg:col-span-6 min-h-[220px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
-              <div className="absolute top-0 left-1/3 w-24 h-24 bg-gradient-to-br from-pink-400/25 to-rose-400/25 rounded-full blur-2xl" />
-              <div className="absolute bottom-2 right-6 w-20 h-20 bg-gradient-to-tr from-indigo-400/20 to-blue-400/20 rounded-full blur-xl" />
+              <div className="absolute top-0 left-1/3 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+              <div className="absolute bottom-2 right-6 w-20 h-20 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -302,12 +302,12 @@ export function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden lg:col-span-5 min-h-[210px] bg-white/60 backdrop-blur-xl p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden lg:col-span-5 min-h-[210px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
-              <div className="absolute -top-6 right-10 w-24 h-24 bg-gradient-to-br from-emerald-400/25 to-teal-400/25 rounded-full blur-2xl" />
-              <div className="absolute bottom-0 left-4 w-20 h-20 bg-gradient-to-tr from-sky-400/20 to-cyan-400/20 rounded-full blur-xl" />
+              <div className="absolute -top-6 right-10 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+              <div className="absolute bottom-0 left-4 w-20 h-20 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -320,12 +320,12 @@ export function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: objectivesVisible ? 1 : 0, y: objectivesVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden lg:col-span-7 min-h-[240px] bg-white/60 backdrop-blur-xl p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden lg:col-span-7 min-h-[240px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
-              <div className="absolute top-2 right-4 w-24 h-24 bg-gradient-to-br from-amber-400/25 to-orange-400/25 rounded-full blur-2xl" />
-              <div className="absolute bottom-4 left-8 w-24 h-24 bg-gradient-to-tr from-indigo-400/20 to-violet-400/20 rounded-full blur-xl" />
+              <div className="absolute top-2 right-4 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+              <div className="absolute bottom-4 left-8 w-24 h-24 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -828,7 +828,7 @@ export function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#2E4A9F] mb-4">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">Our Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Meet the dedicated women leading WEDA and empowering our community
             </p>
@@ -859,17 +859,17 @@ export function AboutPage() {
                   delay: 0.3 + index * 0.08, 
                   ease: [0.25, 0.1, 0.25, 1] 
                 }}
-                className="relative bg-white/70 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group h-full border border-white/50 hover:-translate-y-1"
+                className="relative overflow-hidden bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2 group h-full"
               >
-                {/* Decorative gradient accents */}
-                <div className="pointer-events-none absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-300/30 to-indigo-300/30 rounded-full blur-2xl" />
-                <div className="pointer-events-none absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-tr from-sky-300/25 to-cyan-300/25 rounded-full blur-2xl" />
+                {/* Subtle red gradient accents */}
+                <div className="pointer-events-none absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+                <div className="pointer-events-none absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-2xl" />
                 <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
                   <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
                     {member.name}
                   </h3>
                   <p className="mt-1">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-red-600 text-white shadow">
                       {member.role}
                     </span>
                   </p>
