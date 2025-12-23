@@ -293,7 +293,14 @@ export function AboutPage() {
       </section>
 
       {/* What WEDA Needs (Support & Collaboration) Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-orange-50/40 to-amber-50/30 relative overflow-hidden">
+        {/* Premium Decorative Elements */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-orange-200/30 to-amber-200/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-br from-blue-200/25 to-indigo-200/35 rounded-full blur-3xl"></div>
+        
+        {/* Additional Premium Accents */}
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-tr from-purple-200/20 to-pink-200/30 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-bl from-cyan-200/25 to-teal-200/35 rounded-full blur-xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             ref={needsRef}
