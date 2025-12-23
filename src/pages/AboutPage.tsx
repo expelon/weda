@@ -55,8 +55,8 @@ export function AboutPage() {
           style={{ backgroundImage: "url('/about.webp')" }}
         />
         
-        {/* Gradient Overlay - Same as Home Page */}
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-600/80 to-orange-600/60" />
+        {/* Gradient Overlay - Darker Blue on Left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/80 to-red-700/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col items-center justify-center text-center">
@@ -74,7 +74,7 @@ export function AboutPage() {
               transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed"
             >
-              Empowering Women Entrepreneurs of <span className="text-orange-400">North Karnataka</span> Since 2009
+              Empowering Women Entrepreneurs of <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent font-bold drop-shadow-lg">North Karnataka</span> Since 2009
             </motion.p>
           </div>
         </div>
@@ -94,7 +94,7 @@ export function AboutPage() {
             className="text-center mb-16"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-[#2E4A9F] mb-6 mt-16">
-              Our Mission & Vision
+              Who We Are
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               North Karnataka Women Entrepreneurs Development Association (WEDA) is a charitable organization established in 2009 and registered under Charitable Acts of 1960/17, Government of Karnataka.
@@ -110,11 +110,17 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-white p-8 rounded-lg shadow-sm"
+              className="bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-8 rounded-lg shadow-sm relative overflow-hidden"
             >
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+              {/* Decorative Blurred Elements */}
+              <div className="absolute top-2 right-2 w-24 h-24 bg-red-300/30 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-2 left-2 w-20 h-20 bg-red-400/25 rounded-full blur-xl"></div>
+              <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
+              
+              <div className="relative z-10">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
-                  className="w-6 h-6 text-orange-600"
+                  className="w-6 h-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -128,6 +134,7 @@ export function AboutPage() {
               <p className="text-gray-600">
                 To empower women entrepreneurs through skill development, technology support, financial linkages, and access to national and global markets.
               </p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -135,11 +142,17 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-white p-8 rounded-lg shadow-sm"
+              className="bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-8 rounded-lg shadow-sm relative overflow-hidden"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              {/* Decorative Blurred Elements */}
+              <div className="absolute top-2 right-2 w-24 h-24 bg-red-300/30 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-2 left-2 w-20 h-20 bg-red-400/25 rounded-full blur-xl"></div>
+              <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
+              
+              <div className="relative z-10">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
-                  className="w-6 h-6 text-blue-600"
+                  className="w-6 h-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -154,6 +167,7 @@ export function AboutPage() {
               <p className="text-gray-600">
                 To emerge as a strong platform for women entrepreneurs with shared objectives, enabling sustainable growth and economic independence.
               </p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -161,11 +175,17 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-white p-8 rounded-lg shadow-sm"
+              className="bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-8 rounded-lg shadow-sm relative overflow-hidden"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+              {/* Decorative Blurred Elements */}
+              <div className="absolute top-2 right-2 w-24 h-24 bg-red-300/30 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-2 left-2 w-20 h-20 bg-red-400/25 rounded-full blur-xl"></div>
+              <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
+              
+              <div className="relative z-10">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -179,6 +199,7 @@ export function AboutPage() {
               <p className="text-gray-600">
                 For over a decade, we've been supporting women entrepreneurs with training, product development, and market exposure at national and international levels.
               </p>
+              </div>
             </motion.div>
           </div>
         </div>
