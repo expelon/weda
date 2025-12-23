@@ -1,11 +1,53 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+
+// Custom hook for scroll animations
+const useScrollAnimation = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return { ref, isVisible };
+};
 
 export function HomePage() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+  
+  // Scroll animation hooks for Who We Are section
+  const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation();
+  const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation();
+  
+  // Scroll animation hooks for Our Impact So Far section
+  const { ref: impactLeftRef, isVisible: impactLeftVisible } = useScrollAnimation();
+  const { ref: impactRightRef, isVisible: impactRightVisible } = useScrollAnimation();
+  
+  // Scroll animation hooks for Key Programs section
+  const { ref: programsHeaderRef, isVisible: programsHeaderVisible } = useScrollAnimation();
+  const { ref: programsLeftRef, isVisible: programsLeftVisible } = useScrollAnimation();
+  const { ref: programsRightRef, isVisible: programsRightVisible } = useScrollAnimation();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -121,13 +163,22 @@ export function HomePage() {
 
       {/* Who We Are Section */}
       <section className="bg-gradient-to-br from-gray-50 to-orange-50/30 py-16 overflow-hidden relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{ backgroundImage: "url('/who.webp')" }}
+        />
         {/* Decorative Blurred Elements (match Sectors We Support) */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div
+            <motion.div
+              ref={leftRef}
               className="rounded-lg h-64 lg:h-[32rem] overflow-hidden lg:order-first order-first relative"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: leftVisible ? 1 : 0, x: leftVisible ? 0 : -50 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <img 
                 src="/who.webp" 
@@ -135,10 +186,14 @@ export function HomePage() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-            </div>
+            </motion.div>
 
-            <div
+            <motion.div
+              ref={rightRef}
               className="text-center lg:text-left lg:order-last order-last"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: rightVisible ? 1 : 0, y: rightVisible ? 0 : 50 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <h2 
                 className="text-3xl sm:text-4xl font-bold text-[#2E4A9F] mb-6"
@@ -150,7 +205,7 @@ export function HomePage() {
               >
                 WEDA is a platform dedicated to supporting women entrepreneurs by enhancing their skills, confidence, and economic independence. We provide structured training, product development support, and marketing assistance to help women successfully enter local, national, and global markets.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -160,7 +215,13 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left Side - Content */}
-            <div className="lg:order-1 order-1 text-center lg:text-left">
+            <motion.div 
+              ref={impactLeftRef}
+              className="lg:order-1 order-1 text-center lg:text-left"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: impactLeftVisible ? 1 : 0, y: impactLeftVisible ? 0 : 50 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <h2 className="text-4xl font-bold text-[#2E4A9F] mb-6">Our Impact So Far</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Since 2009, WEDA has been actively empowering women entrepreneurs through continuous skill development programs. We organize exhibitions, workshops, and awareness initiatives, create market platforms for women-led businesses, and support the development of eco-friendly and traditional products—enabling sustainable growth and economic independence.
@@ -180,10 +241,16 @@ export function HomePage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Side - Image */}
-            <div className="relative lg:order-2 order-2">
+            <motion.div 
+              ref={impactRightRef}
+              className="relative lg:order-2 order-2"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: impactRightVisible ? 1 : 0, y: impactRightVisible ? 0 : 50 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
               <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-lg h-96">
                 <div 
                   className="w-full h-full bg-cover bg-center rounded-2xl"
@@ -191,7 +258,7 @@ export function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent rounded-2xl"></div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -203,16 +270,28 @@ export function HomePage() {
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <motion.div 
+            ref={programsHeaderRef}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: programsHeaderVisible ? 1 : 0, y: programsHeaderVisible ? 0 : 30 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Key Programs</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our comprehensive programs empower women entrepreneurs with the skills and exposure needed for success
+              Our comprehensive programs empower women entrepreneurs with skills and exposure needed for success
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Skill Development & Training */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card">
+            <motion.div 
+              ref={programsLeftRef}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: programsLeftVisible ? 1 : 0, y: programsLeftVisible ? 0 : 50 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
               <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -238,10 +317,16 @@ export function HomePage() {
                   <span className="text-gray-700">Confidence building for quality product creation</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* Marketing & Global Exposure */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card">
+            <motion.div 
+              ref={programsRightRef}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: programsRightVisible ? 1 : 0, y: programsRightVisible ? 0 : 50 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
               <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -267,7 +352,7 @@ export function HomePage() {
                   <span className="text-gray-700">Access to new customer bases</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
