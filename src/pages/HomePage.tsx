@@ -713,7 +713,10 @@ export function HomePage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30 relative overflow-hidden">
+        <div aria-hidden="true" className="team-bg-orb team-bg-orb-1" />
+        <div aria-hidden="true" className="team-bg-orb team-bg-orb-2" />
+        <div aria-hidden="true" className="team-bg-orb team-bg-orb-3" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className="text-center mb-12"
@@ -850,6 +853,62 @@ export function HomePage() {
           50% {
             background-position: 100% 50%;
           }
+        }
+
+        @keyframes team-orb-float {
+          0%, 100% {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          50% {
+            transform: translate3d(0, -18px, 0) scale(1.04);
+          }
+        }
+
+        @keyframes team-orb-drift {
+          0%, 100% {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          50% {
+            transform: translate3d(24px, 12px, 0) scale(0.98);
+          }
+        }
+
+        .team-bg-orb {
+          position: absolute;
+          border-radius: 9999px;
+          pointer-events: none;
+          z-index: 0;
+          filter: blur(54px);
+          opacity: 0.75;
+          mix-blend-mode: multiply;
+        }
+
+        .team-bg-orb-1 {
+          top: 10%;
+          left: 6%;
+          width: 360px;
+          height: 360px;
+          background: radial-gradient(circle at 30% 30%, rgba(46, 74, 159, 0.22), rgba(46, 74, 159, 0));
+          animation: team-orb-float 10s ease-in-out infinite;
+        }
+
+        .team-bg-orb-2 {
+          top: 18%;
+          right: 4%;
+          width: 420px;
+          height: 420px;
+          background: radial-gradient(circle at 35% 35%, rgba(239, 68, 68, 0.16), rgba(239, 68, 68, 0));
+          animation: team-orb-drift 12s ease-in-out infinite;
+        }
+
+        .team-bg-orb-3 {
+          bottom: 8%;
+          left: 34%;
+          width: 460px;
+          height: 460px;
+          background: radial-gradient(circle at 40% 40%, rgba(251, 146, 60, 0.14), rgba(251, 146, 60, 0));
+          animation: team-orb-float 11s ease-in-out infinite;
+          animation-delay: -2s;
         }
         
         @keyframes premium-orbital {
