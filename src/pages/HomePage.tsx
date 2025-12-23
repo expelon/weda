@@ -2,6 +2,43 @@ import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
+// Custom hook for scroll progress tracking
+const useScrollProgress = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isInSection, setIsInSection] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionHeight = rect.height;
+      
+      // Check if section is in view
+      const inView = rect.top <= windowHeight && rect.bottom >= 0;
+      setIsInSection(inView);
+
+      if (inView && sectionHeight > windowHeight) {
+        // Calculate scroll progress within section
+        const scrolled = Math.max(0, -rect.top);
+        const maxScroll = sectionHeight - windowHeight;
+        const progress = Math.min(1, scrolled / maxScroll);
+        setScrollProgress(progress);
+      } else if (inView) {
+        setScrollProgress(1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return { scrollProgress, isInSection, sectionRef };
+};
+
 // Custom hook for scroll animations
 const useScrollAnimation = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,10 +81,15 @@ export function HomePage() {
   const { ref: impactLeftRef, isVisible: impactLeftVisible } = useScrollAnimation();
   const { ref: impactRightRef, isVisible: impactRightVisible } = useScrollAnimation();
   
-  // Scroll animation hooks for Key Programs section
-  const { ref: programsHeaderRef, isVisible: programsHeaderVisible } = useScrollAnimation();
-  const { ref: programsLeftRef, isVisible: programsLeftVisible } = useScrollAnimation();
-  const { ref: programsRightRef, isVisible: programsRightVisible } = useScrollAnimation();
+  // Scroll animation hooks for Key Programs section with scroll progress
+  const { scrollProgress, isInSection, sectionRef: keyProgramsSectionRef } = useScrollProgress();
+  
+  // Calculate which card should be visible based on scroll progress
+  const getActiveCardIndex = () => {
+    if (!isInSection) return -1;
+    if (scrollProgress < 0.5) return 0; // First card for first half of scroll
+    return 1; // Second card for second half of scroll
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -99,7 +141,7 @@ export function HomePage() {
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-600/80 to-orange-600/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-red-700/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col items-center justify-center text-center">
@@ -114,7 +156,7 @@ export function HomePage() {
                   delay: 0.1
                 }}
               >
-                Empowering Women Entrepreneurs of <span className="text-orange-400">North Karnataka</span>
+                Empowering Women Entrepreneurs of <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent font-bold drop-shadow-lg">North Karnataka</span>
               </motion.h1>
               <motion.p 
                 className="mt-6 text-sm sm:text-base lg:text-lg text-white/90 max-w-4xl mx-auto"
@@ -130,7 +172,7 @@ export function HomePage() {
               </motion.p>
               <div className="mt-8 flex flex-row gap-4 justify-center items-center flex-wrap">
                 <motion.button 
-                  className="px-8 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="px-8 py-3 bg-white text-[#2E4A9F] font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg hover:shadow-xl"
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 
@@ -143,7 +185,7 @@ export function HomePage() {
                   View Brochure
                 </motion.button>
                 <motion.button 
-                  className="px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="px-8 py-3 bg-[#2E4A9F] text-white font-semibold rounded-lg hover:bg-[#1E3A7F] transition-colors duration-300 shadow-lg hover:shadow-xl"
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 
@@ -264,95 +306,125 @@ export function HomePage() {
       </section>
 
       {/* Key Programs Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30 relative overflow-hidden">
+      <section 
+        ref={keyProgramsSectionRef}
+        className="min-h-screen py-20 bg-gradient-to-br from-gray-50 to-orange-50/30 relative overflow-hidden"
+      >
         {/* Decorative Blurred Elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            ref={programsHeaderRef}
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: programsHeaderVisible ? 1 : 0, y: programsHeaderVisible ? 0 : 30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Key Programs</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our comprehensive programs empower women entrepreneurs with skills and exposure needed for success
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
+            {/* Left Side - Single Card Display */}
+            <div className="relative h-[600px] flex items-center justify-center">
+              {/* Skill Development & Training Card */}
+              <motion.div
+                className="w-full max-w-lg lg:max-w-xl bg-white rounded-2xl p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: getActiveCardIndex() === 0 ? 1 : 0,
+                  y: getActiveCardIndex() === 0 ? 0 : getActiveCardIndex() === 1 ? -30 : 30,
+                  scale: getActiveCardIndex() === 0 ? 1 : 0.95,
+                  zIndex: getActiveCardIndex() === 0 ? 10 : 1,
+                }}
+                transition={{ 
+                  duration: 0.6, 
+                  ease: [0.25, 0.1, 0.25, 1],
+                  opacity: { duration: 0.4 },
+                  y: { duration: 0.6 },
+                  scale: { duration: 0.3 }
+                }}
+                style={{ position: 'absolute' }}
+              >
+                <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Skill Development & Training</h3>
+                
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Comprehensive training tailored to women</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Product design and development from concept to creation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Practical, market-oriented skill building</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Confidence building for quality product creation</span>
+                  </li>
+                </ul>
+              </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Skill Development & Training */}
-            <motion.div 
-              ref={programsLeftRef}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: programsLeftVisible ? 1 : 0, y: programsLeftVisible ? 0 : 50 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            >
-              <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Skill Development & Training</h3>
-              
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Comprehensive training tailored to women</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Product design and development from concept to creation</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Practical, market-oriented skill building</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Confidence building for quality product creation</span>
-                </li>
-              </ul>
-            </motion.div>
+              {/* Marketing & Global Exposure Card */}
+              <motion.div
+                className="w-full max-w-lg lg:max-w-xl bg-white rounded-2xl p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: getActiveCardIndex() === 1 ? 1 : 0,
+                  y: getActiveCardIndex() === 1 ? 0 : getActiveCardIndex() === 0 ? 30 : -30,
+                  scale: getActiveCardIndex() === 1 ? 1 : 0.95,
+                  zIndex: getActiveCardIndex() === 1 ? 10 : 1,
+                }}
+                transition={{ 
+                  duration: 0.6, 
+                  ease: [0.25, 0.1, 0.25, 1],
+                  opacity: { duration: 0.4 },
+                  y: { duration: 0.6 },
+                  scale: { duration: 0.3 }
+                }}
+                style={{ position: 'absolute' }}
+              >
+                <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Marketing & Global Exposure</h3>
+                
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Marketing support for product promotion</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Exposure to national and international markets</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Support to meet diverse market demands</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">Global networking opportunities</span>
+                  </li>
+                </ul>
+              </motion.div>
+            </div>
 
-            {/* Marketing & Global Exposure */}
-            <motion.div 
-              ref={programsRightRef}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: programsRightVisible ? 1 : 0, y: programsRightVisible ? 0 : 50 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            >
-              <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Marketing & Global Exposure</h3>
-              
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Marketing support for product promotion</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Exposure to national and international markets</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Support to meet diverse market demands</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Access to new customer bases</span>
-                </li>
-              </ul>
-            </motion.div>
+            {/* Right Side - Sticky Heading and Paragraph */}
+            <div className="lg:sticky lg:top-20 h-fit">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: isInSection ? 1 : 0, y: isInSection ? 0 : 30 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-center lg:text-left"
+              >
+                <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Key Programs</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:ml-auto">
+                  Our comprehensive programs empower women entrepreneurs with skills and exposure needed for success
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

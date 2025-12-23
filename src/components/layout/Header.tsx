@@ -78,7 +78,7 @@ export function Header({ currentPath }: HeaderProps) {
           <div className="hidden md:flex">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 text-base font-semibold"
+              className="inline-flex items-center justify-center rounded-lg bg-[#2E4A9F] text-white px-5 py-2 text-base font-semibold hover:bg-[#1E3A7F] transition-colors duration-300"
             >
               Register
             </Link>
@@ -163,7 +163,7 @@ export function Header({ currentPath }: HeaderProps) {
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 text-lg font-semibold mt-8"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#2E4A9F] text-white px-6 py-2.5 text-lg font-semibold mt-8 hover:bg-[#1E3A7F] transition-colors duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Register
