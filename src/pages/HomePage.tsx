@@ -315,6 +315,21 @@ export function HomePage() {
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Mobile First: Heading and Paragraph Above Cards */}
+          <div className="lg:hidden text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isInSection ? 1 : 0, y: isInSection ? 0 : 30 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Key Programs</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our comprehensive programs empower women entrepreneurs with skills and exposure needed for success
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Desktop Grid Layout */}
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
             {/* Left Side - Single Card Display */}
             <div className="relative h-[600px] flex items-center justify-center">
@@ -411,16 +426,16 @@ export function HomePage() {
               </motion.div>
             </div>
 
-            {/* Right Side - Sticky Heading and Paragraph */}
-            <div className="lg:sticky lg:top-20 h-fit">
+            {/* Right Side - Sticky Heading and Paragraph (Desktop Only) */}
+            <div className="hidden lg:block lg:sticky lg:top-20 h-fit">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: isInSection ? 1 : 0, y: isInSection ? 0 : 30 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-center lg:text-left"
+                className="text-left"
               >
                 <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Key Programs</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:ml-auto">
+                <p className="text-lg text-gray-600 max-w-2xl">
                   Our comprehensive programs empower women entrepreneurs with skills and exposure needed for success
                 </p>
               </motion.div>
