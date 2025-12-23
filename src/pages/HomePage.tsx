@@ -721,7 +721,7 @@ export function HomePage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#2E4A9F] mb-4">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">Our Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Meet the dedicated women leading WEDA and empowering our community
             </p>
@@ -738,17 +738,17 @@ export function HomePage() {
             ].map((member, index) => (
               <div
                 key={index}
-                className="relative bg-white/70 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/50 hover:-translate-y-1"
+                className="relative overflow-hidden bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2 group"
               >
-                {/* Decorative gradient accents */}
-                <div className="pointer-events-none absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-300/30 to-indigo-300/30 rounded-full blur-2xl" />
-                <div className="pointer-events-none absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-tr from-sky-300/25 to-cyan-300/25 rounded-full blur-2xl" />
+                {/* Subtle red gradient accents */}
+                <div className="pointer-events-none absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
+                <div className="pointer-events-none absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-2xl" />
                 <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
                   <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
                     {member.name}
                   </h3>
                   <p className="mt-1">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-red-600 text-white shadow">
                       {member.role}
                     </span>
                   </p>
