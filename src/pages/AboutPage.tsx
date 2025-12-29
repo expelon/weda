@@ -97,7 +97,7 @@ export function AboutPage() {
               Who We Are
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              North Karnataka Women Entrepreneurs Development Association (WEDA) is a charitable organization established in 2009 and registered under Charitable Acts of 1960/17, Government of Karnataka.
+              North Karnataka Women Entrepreneurs Development Association (WEDA) is a non-profit charitable organization established in 2009 and registered under Charitable Acts of 1960/17, Government of Karnataka.
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
               WEDA functions as a common platform for women to develop entrepreneurial capabilities, access training, adopt improved technologies, and gain exposure to markets. Our goal is to make women socially and economically self-reliant.
