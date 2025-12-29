@@ -39,6 +39,13 @@ export const GalleryPage = () => {
     { id: 34, src: '/about.webp', alt: 'About Us', category: 'Awards' },
     { id: 35, src: '/about2.webp', alt: 'About Us 2', category: 'Awards' },
     { id: 36, src: '/about3.webp', alt: 'About Us 3', category: 'Awards' },
+    { id: 37, src: '/31.webp', alt: 'Event 31', category: 'Events' },
+    { id: 38, src: '/32.webp', alt: 'Event 32', category: 'Events' },
+    { id: 39, src: '/33.webp', alt: 'Event 33', category: 'Events' },
+    { id: 40, src: '/34.webp', alt: 'Event 34', category: 'Events' },
+    { id: 41, src: '/35.webp', alt: 'Event 35', category: 'Events' },
+    { id: 42, src: '/36.webp', alt: 'Event 36', category: 'Events' },
+    { id: 43, src: '/37.webp', alt: 'Event 37', category: 'Events' },
   ];
 
   // Shuffle the images array
