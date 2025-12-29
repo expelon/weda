@@ -848,7 +848,8 @@ export function AboutPage() {
               { name: "Mrs. Roopa Rashinkar", role: "Co-ordinator" },
               { name: "Mrs. Uma Ugalat", role: "Co-ordinator" },
               { name: "Mrs. Raksha Hubballi", role: "Co-ordinator" },
-              { name: "Mrs. Raksha", role: "Exhibition Coordinator" }
+              { name: "Mrs. Raksha", role: "Exhibition Coordinator" },
+              { name: "Mrs. Uma Lakamanahally", role: "Chairperson for Training" }
             ].map((member, index) => (
               <motion.div
                 key={index}
