@@ -17,7 +17,7 @@ export function Footer() {
               <h3 className="text-2xl font-bold">WEDA</h3>
             </div>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-              North Karnataka Women Entrepreneur's Development Association (WEDA) is a charitable organization dedicated to empowering women through entrepreneurship and economic self-reliance.
+              North Karnataka Women Entrepreneur's Development Association (WEDA) is a non-profit charitable organization dedicated to empowering women through entrepreneurship and economic self-reliance.
             </p>
           </div>
 
