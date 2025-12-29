@@ -168,7 +168,7 @@ export function HomePage() {
                   delay: 0.6
                 }}
               >
-                North Karnataka Women Entrepreneur's Development Association (WEDA) is a charitable organization established in 2009 with a mission to empower women through entrepreneurship. We support women in becoming socially and economically self-reliant by providing skill development, training, product development, and market exposure at national and international levels.
+                North Karnataka Women Entrepreneur's Development Association (WEDA) is a non-profit charitable organization established in 2009 with a mission to empower women through entrepreneurship. We support women in becoming socially and economically self-reliant by providing skill development, training, product development, and market exposure at national and international levels.
               </motion.p>
               <div className="mt-8 flex flex-row gap-4 justify-center items-center flex-wrap">
                 <motion.button 
