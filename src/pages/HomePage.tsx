@@ -680,8 +680,7 @@ export function HomePage() {
               { name: "Mrs. Renu Mudholkar", role: "Vice President" },
               { name: "Mrs. Jyothi Hiremath", role: "Secretary" },
               { name: "Mrs. Bharathi Upadhya", role: "Joint Secretary" },
-              { name: "Mrs. Rajeshwari Navale", role: "Treasurer" },
-              { name: "Mrs. Kamala Deshpande", role: "EC Member" }
+              { name: "Mrs. Rajeshwari Navale", role: "Treasurer" }
             ].map((member, index) => (
               <div
                 key={index}

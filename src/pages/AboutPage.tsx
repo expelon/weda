@@ -858,7 +858,6 @@ export function AboutPage() {
               { name: "Mrs. Jyothi Hiremath", role: "Secretary" },
               { name: "Mrs. Bharathi Upadhya", role: "Joint Secretary" },
               { name: "Mrs. Rajeshwari Navale", role: "Treasurer" },
-              { name: "Mrs. Kamala Deshpande", role: "EC Member" },
               { name: "Mrs. Rekha Porwale", role: "EC Member" },
               { name: "Mrs. Roopa Rashinkar", role: "Co-ordinator" },
               { name: "Mrs. Uma Ugalat", role: "Co-ordinator" },
