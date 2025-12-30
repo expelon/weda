@@ -2,43 +2,6 @@ import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-// Custom hook for scroll progress tracking
-const useScrollProgress = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isInSection, setIsInSection] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const sectionHeight = rect.height;
-      
-      // Check if section is in view
-      const inView = rect.top <= windowHeight && rect.bottom >= 0;
-      setIsInSection(inView);
-
-      if (inView && sectionHeight > windowHeight) {
-        // Calculate scroll progress within section
-        const scrolled = Math.max(0, -rect.top);
-        const maxScroll = sectionHeight - windowHeight;
-        const progress = Math.min(1, scrolled / maxScroll);
-        setScrollProgress(progress);
-      } else if (inView) {
-        setScrollProgress(1);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return { scrollProgress, isInSection, sectionRef };
-};
-
 // Custom hook for scroll animations
 const useScrollAnimation = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,16 +43,6 @@ export function HomePage() {
   // Scroll animation hooks for Our Impact So Far section
   const { ref: impactLeftRef, isVisible: impactLeftVisible } = useScrollAnimation();
   const { ref: impactRightRef, isVisible: impactRightVisible } = useScrollAnimation();
-  
-  // Scroll animation hooks for Key Programs section with scroll progress
-  const { scrollProgress, isInSection, sectionRef: keyProgramsSectionRef } = useScrollProgress();
-  
-  // Calculate which card should be visible based on scroll progress
-  const getActiveCardIndex = () => {
-    if (!isInSection) return -1;
-    if (scrollProgress < 0.5) return 0; // First card for first half of scroll
-    return 1; // Second card for second half of scroll
-  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -251,7 +204,7 @@ export function HomePage() {
               {/* Social Media Icons */}
               <div className="flex items-center justify-center sm:justify-start space-x-4 mt-6">
                 <a 
-                  href="https://www.facebook.com" 
+                  href="https://www.facebook.com/share/1H7KhowiyR/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"

@@ -24,7 +24,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mt-4">
               <span className="text-gray-400 text-sm mr-2">Follow Us:</span>
               <a 
-                href="https://www.facebook.com" 
+                href="https://www.facebook.com/share/1H7KhowiyR/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
