@@ -254,10 +254,10 @@ export function ContactPage() {
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-gray-900">Email</h3>
                       <a 
-                        href="mailto:wedank2009@gmail.com" 
+                        href="mailto:nkweda71@gmail.com" 
                         className="text-gray-600 hover:text-orange-600 transition-colors block"
                       >
-                        wedank2009@gmail.com
+                        nkweda71@gmail.com
                       </a>
                       <a 
                         href="mailto:rathi.creations.24@gmail.com" 
