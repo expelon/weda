@@ -1,10 +1,22 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export function ContactPage() {
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Check if URL has success parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      setShowSuccessToast(true);
+      // Remove success parameter from URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+      // Hide toast after 5 seconds
+      setTimeout(() => setShowSuccessToast(false), 5000);
+    }
   }, []);
 
   return (
@@ -38,7 +50,46 @@ export function ContactPage() {
             >
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">Registration Form</h2>
               
-              <form className="space-y-6">
+              <form 
+                className="space-y-6"
+                action="https://formsubmit.co/nkweda71@gmail.com"
+                method="POST"
+                onSubmit={(e) => {
+                  // Add form submission handling
+                  const form = e.currentTarget;
+                  const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+                  if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    
+                    // Form will submit normally to FormSubmit.co
+                    setTimeout(() => {
+                      submitButton.disabled = false;
+                      submitButton.textContent = 'Submit Registration';
+                    }, 3000);
+                  }
+                }}
+              >
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New WEDA Registration Form Submission"
+                />
+                <input
+                  type="hidden"
+                  name="_template"
+                  value="table"
+                />
+                <input
+                  type="hidden"
+                  name="_captcha"
+                  value="false"
+                />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={window.location.href + "?success=true"}
+                />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name <span className="text-red-500">*</span>
@@ -47,7 +98,7 @@ export function ContactPage() {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Your name"
                     required
                   />
@@ -61,7 +112,7 @@ export function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="your@email.com"
                     required
                   />
@@ -75,7 +126,7 @@ export function ContactPage() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="+91 12345 67890"
                     required
                   />
@@ -88,7 +139,7 @@ export function ContactPage() {
                   <select
                     id="business-type"
                     name="business-type"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     required
                   >
                     <option value="">Select your business type</option>
@@ -114,7 +165,7 @@ export function ContactPage() {
                     type="text"
                     id="city"
                     name="city"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Your city"
                     required
                   />
@@ -122,7 +173,7 @@ export function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+                  className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
                   Submit Registration
                 </button>
@@ -232,6 +283,50 @@ export function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Success Toast Notification */}
+      {showSuccessToast && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.8 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            className="bg-white border-l-4 border-green-500 rounded-lg shadow-2xl backdrop-blur-lg bg-opacity-95 min-w-[320px] max-w-md"
+          >
+            <div className="flex items-start p-4">
+              <div className="flex-shrink-0 mr-3">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1 mr-3">
+                <h4 className="text-gray-900 font-semibold text-sm mb-1">Registration Successful!</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">Your registration has been submitted successfully. We'll get back to you soon!</p>
+              </div>
+              <button
+                onClick={() => setShowSuccessToast(false)}
+                className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-md hover:bg-gray-100"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            {/* Progress bar */}
+            <div className="h-1 bg-gray-200 rounded-b-lg overflow-hidden">
+              <motion.div
+                initial={{ width: "100%" }}
+                animate={{ width: "0%" }}
+                transition={{ duration: 5, ease: "linear" }}
+                className="h-full bg-green-500"
+              />
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
