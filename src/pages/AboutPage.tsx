@@ -118,7 +118,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -150,7 +150,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -183,7 +183,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -227,24 +227,24 @@ export function AboutPage() {
 
           {/* Objectives section with fixed height and vertical scroll */}
           <div className="objectives-scroll max-h-[400px] md:max-h-[500px] lg:max-h-[600px] overflow-y-auto pr-2 pb-4 no-scrollbar">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 [grid-auto-rows:320px] pb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 [grid-auto-rows:280px] md:[grid-auto-rows:320px] pb-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden min-h-[280px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden min-h-[260px] sm:min-h-[280px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
               <div className="absolute -top-6 -right-6 w-28 h-28 bg-gradient-to-br from-red-300/30 to-rose-300/30 rounded-full blur-2xl" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Promote entrepreneurship among women</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Empowering women to start and grow their own businesses through comprehensive support, mentorship, and entrepreneurial training programs. We provide guidance on business planning, financial management, and market strategies to help women entrepreneurs succeed in their ventures and achieve economic independence.</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Promote entrepreneurship among women</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Empowering women to start and grow their own businesses through comprehensive support, mentorship, and entrepreneurial training programs. We provide guidance on business planning, financial management, and market strategies to help women entrepreneurs succeed in their ventures and achieve economic independence.</p>
               </div>
             </motion.div>
 
@@ -253,18 +253,18 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden min-h-[300px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden min-h-[280px] sm:min-h-[300px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
               <div className="absolute -top-8 left-6 w-28 h-28 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
               <div className="absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Improve socio-economic conditions</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Enhancing the economic independence and social status of women through sustainable business opportunities and skill development initiatives. We focus on creating pathways for financial stability, promoting gender equality in the workplace, and empowering women to become leaders in their communities and industries.</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Improve socio-economic conditions</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Enhancing the economic independence and social status of women through sustainable business opportunities and skill development initiatives. We focus on creating pathways for financial stability, promoting gender equality in the workplace, and empowering women to become leaders in their communities and industries.</p>
               </div>
             </motion.div>
 
@@ -273,18 +273,18 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden min-h-[320px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden min-h-[300px] sm:min-h-[320px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
               <div className="absolute top-4 right-8 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 left-6 w-28 h-28 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Support development of marketable products</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Assisting women entrepreneurs in creating high-quality, market-ready products through design support, quality control, and product innovation. Our team provides expert guidance on product development, packaging design, quality assurance, and market research to ensure products meet industry standards and customer expectations.</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Support development of marketable products</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Assisting women entrepreneurs in creating high-quality, market-ready products through design support, quality control, and product innovation. Our team provides expert guidance on product development, packaging design, quality assurance, and market research to ensure products meet industry standards and customer expectations.</p>
               </div>
             </motion.div>
 
@@ -293,18 +293,18 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden min-h-[300px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden min-h-[280px] sm:min-h-[300px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
               <div className="absolute top-0 left-1/3 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
               <div className="absolute bottom-2 right-6 w-20 h-20 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Encourage technology adoption and innovation</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Promoting the use of modern technology and innovative practices to enhance productivity and competitiveness in women-led businesses. We provide training on digital tools, e-commerce platforms, and modern manufacturing techniques to help women entrepreneurs leverage technology for business growth and efficiency.</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Encourage technology adoption and innovation</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Promoting the use of modern technology and innovative practices to enhance productivity and competitiveness in women-led businesses. We provide training on digital tools, e-commerce platforms, and modern manufacturing techniques to help women entrepreneurs leverage technology for business growth and efficiency.</p>
               </div>
             </motion.div>
 
@@ -313,18 +313,18 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden min-h-[290px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden min-h-[270px] sm:min-h-[290px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
               <div className="absolute -top-6 right-10 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
               <div className="absolute bottom-0 left-4 w-20 h-20 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Provide job-oriented and computer training</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Offering practical skills training and computer literacy programs to enhance employability and business management capabilities. Our training programs include computer basics, accounting software, digital marketing, and specialized skills that prepare women for modern job opportunities and entrepreneurial success.</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Provide job-oriented and computer training</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Offering practical skills training and computer literacy programs to enhance employability and business management capabilities. Our training programs include computer basics, accounting software, digital marketing, and specialized skills that prepare women for modern job opportunities and entrepreneurial success.</p>
               </div>
             </motion.div>
 
@@ -333,18 +333,18 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative overflow-hidden min-h-[320px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
+              className="relative overflow-hidden min-h-[300px] sm:min-h-[320px] bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-4 sm:p-6 rounded-lg shadow-md border border-white/40 transition-transform duration-500 hover:-translate-y-2"
             >
               <div className="absolute top-2 right-4 w-24 h-24 bg-gradient-to-br from-red-300/25 to-rose-400/25 rounded-full blur-2xl" />
               <div className="absolute bottom-4 left-8 w-24 h-24 bg-gradient-to-tr from-red-300/20 to-pink-300/20 rounded-full blur-xl" />
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Strengthen supply chain and marketing networks</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Building robust supply chains and marketing networks to help women entrepreneurs reach wider markets and grow their businesses sustainably. We facilitate connections with suppliers, distributors, retailers, and marketing channels while providing logistical support and market access strategies for business expansion.</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Strengthen supply chain and marketing networks</h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Building robust supply chains and marketing networks to help women entrepreneurs reach wider markets and grow their businesses sustainably. We facilitate connections with suppliers, distributors, retailers, and marketing channels while providing logistical support and market access strategies for business expansion.</p>
               </div>
             </motion.div>
             </div>
