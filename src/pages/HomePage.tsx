@@ -335,7 +335,7 @@ export function HomePage() {
             <div className="relative h-[600px] flex items-center justify-center">
               {/* Skill Development & Training Card */}
               <motion.div
-                className="w-full max-w-lg lg:max-w-xl bg-white rounded-2xl p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
+                className="w-full max-w-lg lg:max-w-xl bg-red-600 text-white rounded-2xl p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
                   opacity: getActiveCardIndex() === 0 ? 1 : 0,
@@ -352,36 +352,36 @@ export function HomePage() {
                 }}
                 style={{ position: 'absolute' }}
               >
-                <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Skill Development & Training</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Skill Development & Training</h3>
                 
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Comprehensive training tailored to women</span>
+                    <span className="text-white">Comprehensive training tailored to women</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Product design and development from concept to creation</span>
+                    <span className="text-white">Product design and development from concept to creation</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Practical, market-oriented skill building</span>
+                    <span className="text-white">Practical, market-oriented skill building</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Confidence building for quality product creation</span>
+                    <span className="text-white">Confidence building for quality product creation</span>
                   </li>
                 </ul>
               </motion.div>
 
               {/* Marketing & Global Exposure Card */}
               <motion.div
-                className="w-full max-w-lg lg:max-w-xl bg-white rounded-2xl p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
+                className="w-full max-w-lg lg:max-w-xl bg-red-600 text-white rounded-2xl p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 sector-card"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
                   opacity: getActiveCardIndex() === 1 ? 1 : 0,
@@ -398,29 +398,29 @@ export function HomePage() {
                 }}
                 style={{ position: 'absolute' }}
               >
-                <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Marketing & Global Exposure</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Marketing & Global Exposure</h3>
                 
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Marketing support for product promotion</span>
+                    <span className="text-white">Marketing support for product promotion</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Exposure to national and international markets</span>
+                    <span className="text-white">Exposure to national and international markets</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Support to meet diverse market demands</span>
+                    <span className="text-white">Support to meet diverse market demands</span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">Global networking opportunities</span>
+                    <span className="text-white">Global networking opportunities</span>
                   </li>
                 </ul>
               </motion.div>
