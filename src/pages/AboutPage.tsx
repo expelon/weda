@@ -110,7 +110,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-8 rounded-lg shadow-sm relative overflow-hidden"
+              className="bg-red-600 text-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden"
             >
               {/* Decorative Blurred Elements */}
               <div className="absolute top-2 right-2 w-24 h-24 bg-red-300/30 rounded-full blur-2xl"></div>
@@ -118,7 +118,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -128,10 +128,10 @@ export function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-white mb-4">
                 Our Mission
               </h3>
-              <p className="text-gray-600">
+              <p className="text-white">
                 To empower women entrepreneurs through skill development, technology support, financial linkages, and access to national and global markets.
               </p>
               </div>
@@ -142,7 +142,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-8 rounded-lg shadow-sm relative overflow-hidden"
+              className="bg-red-600 text-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden"
             >
               {/* Decorative Blurred Elements */}
               <div className="absolute top-2 right-2 w-24 h-24 bg-red-300/30 rounded-full blur-2xl"></div>
@@ -150,7 +150,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -161,10 +161,10 @@ export function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-white mb-4">
                 Our Vision
               </h3>
-              <p className="text-gray-600">
+              <p className="text-white">
                 To emerge as a strong platform for women entrepreneurs with shared objectives, enabling sustainable growth and economic independence.
               </p>
               </div>
@@ -175,7 +175,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-gradient-to-br from-red-50/40 via-red-100/30 to-pink-100/25 p-8 rounded-lg shadow-sm relative overflow-hidden"
+              className="bg-red-600 text-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden"
             >
               {/* Decorative Blurred Elements */}
               <div className="absolute top-2 right-2 w-24 h-24 bg-red-300/30 rounded-full blur-2xl"></div>
@@ -183,7 +183,7 @@ export function AboutPage() {
               <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-300/20 rounded-full blur-lg transform -translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10">
-              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2E4A9F] rounded-xl flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -193,10 +193,10 @@ export function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-white mb-4">
                 Established 2009
               </h3>
-              <p className="text-gray-600">
+              <p className="text-white">
                 For over a decade, we've been supporting women entrepreneurs with training, product development, and market exposure at national and international levels.
               </p>
               </div>
