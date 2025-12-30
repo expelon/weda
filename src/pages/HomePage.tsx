@@ -721,7 +721,7 @@ export function HomePage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#2E4A9F] mb-4">Our Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Meet the dedicated women leading WEDA and empowering our community
             </p>
@@ -748,7 +748,7 @@ export function HomePage() {
                     {member.name}
                   </h3>
                   <p className="mt-1">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-red-600 text-white shadow">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-[#2E4A9F] text-white shadow">
                       {member.role}
                     </span>
                   </p>
