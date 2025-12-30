@@ -249,7 +249,7 @@ export function HomePage() {
               </p>
               
               {/* Social Media Icons */}
-              <div className="flex items-center space-x-4 mt-6">
+              <div className="flex items-center justify-center sm:justify-start space-x-4 mt-6">
                 <a 
                   href="https://www.facebook.com" 
                   target="_blank"
