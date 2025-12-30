@@ -226,7 +226,7 @@ export function HomePage() {
                 </a>
                 
                 <a 
-                  href="https://www.instagram.com" 
+                  href="https://www.instagram.com/northkarnataka.weda" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-600 transition-all"

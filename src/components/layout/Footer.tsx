@@ -46,7 +46,7 @@ export function Footer() {
               </a>
               
               <a 
-                href="https://www.instagram.com" 
+                href="https://www.instagram.com/northkarnataka.weda" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
