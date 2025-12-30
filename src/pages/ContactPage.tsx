@@ -76,7 +76,7 @@ export function ContactPage() {
                     id="phone"
                     name="phone"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 12345 67890"
                     required
                   />
                 </div>
