@@ -528,17 +528,17 @@ export function HomePage() {
       </section>
 
       {/* Sectors We Support Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-orange-50/30 py-16 overflow-hidden relative">
+      <section className="bg-gradient-to-br from-[#2E4A9F] to-blue-700 py-16 overflow-hidden relative">
         {/* Decorative Blurred Elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2E4A9F] mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Sectors We Support
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               We empower women entrepreneurs across diverse sectors with comprehensive support and resources
             </p>
           </div>
@@ -547,8 +547,8 @@ export function HomePage() {
           <div className="relative">
             <div className="flex animate-scroll-x space-x-6">
               {/* First set of sectors */}
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -557,8 +557,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Traditional and contemporary handcrafted products with modern design appeal</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                   </svg>
@@ -567,8 +567,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Modern textile design and fashion entrepreneurship with sustainable practices</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -577,8 +577,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Eco-friendly jute products and sustainable packaging solutions</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
@@ -587,8 +587,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Traditional and innovative food products with quality standards</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
@@ -597,8 +597,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Stylish bags and fashion accessories with unique designs</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -607,8 +607,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Handcrafted jewelry with traditional and contemporary designs</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
                   </svg>
@@ -617,8 +617,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Traditional and modern art forms with creative expression</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -628,8 +628,8 @@ export function HomePage() {
               </div>
 
               {/* Duplicate set for seamless scrolling */}
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -638,8 +638,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Traditional and contemporary handcrafted products with modern design appeal</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                   </svg>
@@ -648,8 +648,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Modern textile design and fashion entrepreneurship with sustainable practices</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -658,8 +658,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Eco-friendly jute products and sustainable packaging solutions</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
@@ -668,8 +668,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Traditional and innovative food products with quality standards</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
@@ -678,8 +678,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Stylish bags and fashion accessories with unique designs</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -688,8 +688,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Handcrafted jewelry with traditional and contemporary designs</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
                   </svg>
@@ -698,8 +698,8 @@ export function HomePage() {
                 <p className="text-gray-600 text-sm">Traditional and modern art forms with creative expression</p>
               </div>
 
-              <div className="flex-none w-64 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <div className="flex-none w-64 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 sector-card">
+                <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
