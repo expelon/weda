@@ -46,6 +46,18 @@ export const GalleryPage = () => {
     { id: 41, src: '/35.webp', alt: 'Event 35', category: 'Events' },
     { id: 42, src: '/36.webp', alt: 'Event 36', category: 'Events' },
     { id: 43, src: '/37.webp', alt: 'Event 37', category: 'Events' },
+    { id: 44, src: '/38.webp', alt: 'Event 38', category: 'Events' },
+    { id: 45, src: '/39.webp', alt: 'Event 39', category: 'Events' },
+    { id: 46, src: '/40.webp', alt: 'Event 40', category: 'Events' },
+    { id: 47, src: '/41.webp', alt: 'Event 41', category: 'Events' },
+    { id: 48, src: '/42.webp', alt: 'Event 42', category: 'Events' },
+    { id: 49, src: '/43.webp', alt: 'Event 43', category: 'Events' },
+    { id: 50, src: '/44.webp', alt: 'Event 44', category: 'Events' },
+    { id: 51, src: '/45.webp', alt: 'Event 45', category: 'Events' },
+    { id: 52, src: '/46.webp', alt: 'Event 46', category: 'Events' },
+    { id: 53, src: '/47.webp', alt: 'Event 47', category: 'Events' },
+    { id: 54, src: '/48.webp', alt: 'Event 48', category: 'Events' },
+    { id: 55, src: '/49.webp', alt: 'Event 49', category: 'Events' },
   ];
 
   // Shuffle the images array

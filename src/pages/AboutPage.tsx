@@ -7,6 +7,35 @@ export function AboutPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Check if mobile device
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleNewsletterClick = () => {
+    if (isMobile) {
+      // Download on mobile
+      const link = document.createElement('a');
+      link.href = '/eMERG Newsletter Jan 2025 to Sept 2025-1.pdf';
+      link.download = 'WEDA-Newsletter.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // Open in new tab on desktop
+      window.open('/eMERG Newsletter Jan 2025 to Sept 2025-1.pdf', '_blank');
+    }
+  };
+
   // Custom hook for scroll animations
   const useScrollAnimation = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -102,6 +131,12 @@ export function AboutPage() {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
               WEDA functions as a common platform for women to develop entrepreneurial capabilities, access training, adopt improved technologies, and gain exposure to markets. Our goal is to make women socially and economically self-reliant.
             </p>
+            <button
+              className="mt-8 px-8 py-3 bg-[#2E4A9F] text-white font-semibold rounded-lg shadow-lg"
+              onClick={handleNewsletterClick}
+            >
+              View Newsletter
+            </button>
           </motion.div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -206,7 +241,7 @@ export function AboutPage() {
       </section>
 
       {/* Objectives of WEDA Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30 relative overflow-hidden">
+      <section id="objectives-section" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50/30 relative overflow-hidden">
         {/* Decorative Blurred Elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
