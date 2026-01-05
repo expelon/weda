@@ -407,8 +407,8 @@ export function HomePage() {
             {/* Event/Award Card 1 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/15.webp" 
-                alt="Annual Exhibition" 
+                src="/30.webp" 
+                alt="Leadership Summit" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -416,8 +416,8 @@ export function HomePage() {
             {/* Event/Award Card 2 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/30.webp" 
-                alt="Leadership Summit" 
+                src="/15.webp" 
+                alt="Annual Exhibition" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
