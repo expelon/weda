@@ -416,8 +416,8 @@ export function HomePage() {
             {/* Event/Award Card 2 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/15.webp" 
-                alt="Annual Exhibition" 
+                src="/55.jpg" 
+                alt="WEDA Event 55" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -425,8 +425,8 @@ export function HomePage() {
             {/* Event/Award Card 3 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/13.webp" 
-                alt="Recognition Awards" 
+                src="/15.webp" 
+                alt="Annual Exhibition" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -434,8 +434,8 @@ export function HomePage() {
             {/* Event/Award Card 4 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/1.webp" 
-                alt="Workshop Series" 
+                src="/53.webp" 
+                alt="WEDA Event 53" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
