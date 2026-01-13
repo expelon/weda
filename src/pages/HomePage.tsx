@@ -622,7 +622,7 @@ export function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Jewelry</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Jewellery</h3>
                 <p className="text-gray-600 text-sm">Handcrafted jewelry with traditional and contemporary designs</p>
               </div>
 
@@ -703,7 +703,7 @@ export function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Jewelry</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Jewellery</h3>
                 <p className="text-gray-600 text-sm">Handcrafted jewelry with traditional and contemporary designs</p>
               </div>
 
