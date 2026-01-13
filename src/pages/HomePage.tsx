@@ -83,6 +83,78 @@ export function HomePage() {
       window.open('/brochure.pdf', '_blank');
     }
   };
+
+  const memberContacts = [
+    {
+      title: 'Sri Sai Enterprises',
+      subtitle: 'Eco-friendly Bags',
+      description: 'Paper bags, Jute Bags, Cotton Bags',
+      contacts: [
+        { label: 'Call', value: '+91 9448415428', href: 'tel:+919448415428' },
+        { label: 'Call', value: '+91 8073260492', href: 'tel:+918073260492' },
+      ],
+      accent: 'from-red-600 to-red-700',
+      icon: (
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Shriwari Food Products',
+      subtitle: 'Home Made Food Products',
+      description: 'Contact: Bharati Upadhyay',
+      contacts: [
+        { label: 'Call', value: '+91 9763571067', href: 'tel:+919763571067' },
+        { label: 'Call', value: '+91 6363067161', href: 'tel:+916363067161' },
+      ],
+      accent: 'from-red-600 to-red-700',
+      icon: (
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Rathi Creations',
+      subtitle: 'Pure Kanjivaram Silk Sarees',
+      description: 'Contact for more details',
+      contacts: [{ label: 'Call', value: '+91 9448377717', href: 'tel:+919448377717' }],
+      accent: 'from-red-600 to-red-700',
+      icon: (
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Sakhi Creations',
+      subtitle: 'Ethnic Kids Wear',
+      description: 'Contact for more details',
+      contacts: [
+        { label: 'Call', value: '+91 8867181572', href: 'tel:+918867181572' },
+        { label: 'Call', value: '+91 9980956604', href: 'tel:+919980956604' },
+      ],
+      accent: 'from-red-600 to-red-700',
+      icon: (
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Rajeshwari Embroidery Designs',
+      subtitle: 'Hand Embroidery',
+      description: 'Contact for more details',
+      contacts: [{ label: 'WhatsApp', value: '+91 74116 48633', href: 'https://wa.me/917411648633' }],
+      accent: 'from-red-600 to-red-700',
+      icon: (
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg>
+      ),
+    },
+  ];
   return (
     <div>
       <section className="relative min-h-screen flex items-center justify-center">
@@ -659,6 +731,84 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Contact Our Members Section */}
+      <section className="py-20 bg-gradient-to-br from-red-600 to-red-700 relative overflow-hidden">
+        <div aria-hidden="true" className="absolute inset-0 premium-grid" />
+        <div aria-hidden="true" className="absolute top-8 right-6 w-64 h-64 bg-red-500/20 rounded-full blur-3xl"></div>
+        <div aria-hidden="true" className="absolute bottom-10 left-8 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide text-white/90 backdrop-blur">
+                Women-Owned Businesses
+              </div>
+              <h2 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                Contact Our Members
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-white/85 max-w-3xl mx-auto">
+                Explore premium products made by our WEDA entrepreneurs and reach out directly to place orders.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+            {memberContacts.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="premium-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                <div className="premium-card-inner">
+                  <div className="flex items-start gap-4">
+                    <div className={`premium-icon bg-gradient-to-br ${item.accent}`}>
+                      {item.icon}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-lg font-bold text-white leading-snug truncate">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p className="mt-1 text-sm text-white/75">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="mt-4 text-sm text-white/85">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-5 space-y-2">
+                    {item.contacts.map((c) => (
+                      <a
+                        key={`${item.title}-${c.href}`}
+                        href={c.href}
+                        target={c.href.startsWith('http') ? '_blank' : undefined}
+                        rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="premium-contact"
+                      >
+                        <span className="premium-contact-pill">{c.label}</span>
+                        <span className="premium-contact-text">{c.value}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30 relative overflow-hidden">
         <div aria-hidden="true" className="team-bg-orb team-bg-orb-1" />
@@ -714,185 +864,6 @@ export function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Our Members Section */}
-      <section className="py-20 bg-gradient-to-br from-[#2E4A9F] to-blue-700 relative overflow-hidden">
-        {/* Decorative Blurred Elements */}
-        <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Contact Our Members</h2>
-              <p className="text-lg text-white/90 max-w-2xl mx-auto">
-                Connect with our talented women entrepreneurs for eco-friendly products, traditional textiles, and handcrafted items
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Sri Sai Enterprises */}
-            <motion.div
-              className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group sector-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="relative p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sri Sai Enterprises</h3>
-                <p className="text-gray-600 mb-4">Eco-friendly bags - Paper bags, Jute Bags, Cotton Bags</p>
-                <div className="space-y-2">
-                  <a href="tel:+919448415428" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 9448415428
-                  </a>
-                  <a href="tel:+918073260492" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 8073260492
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Shriwari Food Products */}
-            <motion.div
-              className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group sector-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="relative p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Shriwari Food Products</h3>
-                <p className="text-gray-600 mb-4">Home made food products</p>
-                <div className="space-y-2">
-                  <p className="text-sm text-gray-700 font-medium">Bharati Upadhyay</p>
-                  <a href="tel:+919763571067" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 9763571067
-                  </a>
-                  <a href="tel:+916363067161" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 6363067161
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Rathi Creations */}
-            <motion.div
-              className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group sector-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="relative p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Rathi Creations</h3>
-                <p className="text-gray-600 mb-4">Pure Kanjivaram Silk Sarees</p>
-                <div className="space-y-2">
-                  <a href="tel:+919448377717" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 9448377717
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Sakhi Creations */}
-            <motion.div
-              className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group sector-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="relative p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sakhi Creations</h3>
-                <p className="text-gray-600 mb-4">Ethnic Kids Wear</p>
-                <div className="space-y-2">
-                  <a href="tel:+918867181572" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 8867181572
-                  </a>
-                  <a href="tel:+919980956604" className="flex items-center text-sm text-[#2E4A9F] hover:text-blue-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +91 9980956604
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Rajeshwari Embroidery Designs */}
-            <motion.div
-              className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group sector-card md:col-span-2 lg:col-span-1"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="relative p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Rajeshwari Embroidery Designs</h3>
-                <p className="text-gray-600 mb-4">Hand Embroidery</p>
-                <div className="space-y-2">
-                  <a href="https://wa.me/917411648633" target="_blank" rel="noopener noreferrer" className="flex items-center text-sm text-green-600 hover:text-green-700 transition-colors">
-                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.215 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                    WhatsApp: +91 74116 48633
-                  </a>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -979,6 +950,136 @@ export function HomePage() {
           50% {
             background-position: 100% 50%;
           }
+        }
+
+        @keyframes premium-border-rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        .premium-grid {
+          background-image:
+            radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.10) 1px, transparent 0);
+          background-size: 18px 18px;
+          opacity: 0.35;
+        }
+
+        .premium-card {
+          position: relative;
+          border-radius: 24px;
+          padding: 1px;
+          overflow: hidden;
+          transform: translateZ(0);
+        }
+
+        .premium-card::before {
+          content: "";
+          position: absolute;
+          inset: -40%;
+          background: conic-gradient(from 180deg, rgba(239, 68, 68, 0.9), rgba(255, 255, 255, 0.12), rgba(239, 68, 68, 0.9));
+          animation: premium-border-rotate 10s linear infinite;
+          opacity: 0.85;
+        }
+
+        .premium-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(closest-side, rgba(239, 68, 68, 0.24), transparent 70%);
+          opacity: 0;
+          transition: opacity 300ms ease;
+          pointer-events: none;
+        }
+
+        .premium-card:hover::after {
+          opacity: 1;
+        }
+
+        .premium-card-inner {
+          position: relative;
+          z-index: 1;
+          height: 100%;
+          border-radius: 23px;
+          padding: 22px;
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          backdrop-filter: blur(14px);
+          box-shadow: 0 24px 64px rgba(2, 6, 23, 0.35);
+        }
+
+        .premium-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 12px 24px rgba(239, 68, 68, 0.35);
+          flex-shrink: 0;
+        }
+
+        .premium-contact {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 12px;
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          background: rgba(2, 6, 23, 0.18);
+          transition: transform 200ms ease, background 200ms ease, border-color 200ms ease;
+        }
+
+        .premium-contact:hover {
+          transform: translateY(-1px);
+          background: rgba(2, 6, 23, 0.24);
+          border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .premium-contact-pill {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          padding: 5px 10px;
+          border-radius: 9999px;
+          color: rgba(255, 255, 255, 0.92);
+          background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(190, 18, 60, 0.9));
+          box-shadow: 0 10px 22px rgba(239, 68, 68, 0.25);
+          flex-shrink: 0;
+        }
+
+        .premium-contact-text {
+          font-size: 14px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.88);
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .premium-cta {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 14px;
+          border-radius: 14px;
+          font-weight: 800;
+          font-size: 14px;
+          color: white;
+          background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(190, 18, 60, 0.95));
+          box-shadow: 0 16px 32px rgba(239, 68, 68, 0.32);
+          transition: transform 200ms ease, filter 200ms ease;
+          white-space: nowrap;
+        }
+
+        .premium-cta:hover {
+          transform: translateY(-1px);
+          filter: brightness(1.04);
         }
 
         @keyframes team-orb-float {
