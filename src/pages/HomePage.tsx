@@ -93,7 +93,7 @@ export function HomePage() {
         { label: 'Call', value: '+91 9448415428', href: 'tel:+919448415428' },
         { label: 'Call', value: '+91 8073260492', href: 'tel:+918073260492' },
       ],
-      accent: 'from-red-600 to-red-700',
+      accent: 'from-blue-600 to-blue-700',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -108,7 +108,7 @@ export function HomePage() {
         { label: 'Call', value: '+91 9763571067', href: 'tel:+919763571067' },
         { label: 'Call', value: '+91 6363067161', href: 'tel:+916363067161' },
       ],
-      accent: 'from-red-600 to-red-700',
+      accent: 'from-blue-600 to-blue-700',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -120,7 +120,7 @@ export function HomePage() {
       subtitle: 'Pure Kanjivaram Silk Sarees',
       description: 'Contact for more details',
       contacts: [{ label: 'Call', value: '+91 9448377717', href: 'tel:+919448377717' }],
-      accent: 'from-red-600 to-red-700',
+      accent: 'from-blue-600 to-blue-700',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
@@ -135,7 +135,7 @@ export function HomePage() {
         { label: 'Call', value: '+91 8867181572', href: 'tel:+918867181572' },
         { label: 'Call', value: '+91 9980956604', href: 'tel:+919980956604' },
       ],
-      accent: 'from-red-600 to-red-700',
+      accent: 'from-blue-600 to-blue-700',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -147,7 +147,7 @@ export function HomePage() {
       subtitle: 'Hand Embroidery',
       description: 'Contact for more details',
       contacts: [{ label: 'WhatsApp', value: '+91 74116 48633', href: 'https://wa.me/917411648633' }],
-      accent: 'from-red-600 to-red-700',
+      accent: 'from-blue-600 to-blue-700',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -774,17 +774,17 @@ export function HomePage() {
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-bold text-white leading-snug truncate">
+                        <h3 className="text-lg font-bold text-gray-900 leading-snug truncate">
                           {item.title}
                         </h3>
                       </div>
-                      <p className="mt-1 text-sm text-white/75">
+                      <p className="mt-1 text-sm text-gray-600">
                         {item.subtitle}
                       </p>
                     </div>
                   </div>
 
-                  <p className="mt-4 text-sm text-white/85">
+                  <p className="mt-4 text-sm text-gray-700">
                     {item.description}
                   </p>
 
@@ -1005,7 +1005,7 @@ export function HomePage() {
           height: 100%;
           border-radius: 23px;
           padding: 22px;
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+          background: white;
           border: 1px solid rgba(255, 255, 255, 0.18);
           backdrop-filter: blur(14px);
           box-shadow: 0 24px 64px rgba(2, 6, 23, 0.35);
@@ -1018,7 +1018,7 @@ export function HomePage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 12px 24px rgba(239, 68, 68, 0.35);
+          box-shadow: 0 12px 24px rgba(59, 130, 246, 0.35);
           flex-shrink: 0;
         }
 
@@ -1028,15 +1028,15 @@ export function HomePage() {
           gap: 10px;
           padding: 10px 12px;
           border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.16);
-          background: rgba(2, 6, 23, 0.18);
+          border: 1px solid #bfdbfe;
+          background: #dbeafe;
           transition: transform 200ms ease, background 200ms ease, border-color 200ms ease;
         }
 
         .premium-contact:hover {
           transform: translateY(-1px);
-          background: rgba(2, 6, 23, 0.24);
-          border-color: rgba(255, 255, 255, 0.22);
+          background: #bfdbfe;
+          border-color: #93c5fd;
         }
 
         .premium-contact-pill {
@@ -1047,15 +1047,15 @@ export function HomePage() {
           padding: 5px 10px;
           border-radius: 9999px;
           color: rgba(255, 255, 255, 0.92);
-          background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(190, 18, 60, 0.9));
-          box-shadow: 0 10px 22px rgba(239, 68, 68, 0.25);
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.9));
+          box-shadow: 0 10px 22px rgba(59, 130, 246, 0.25);
           flex-shrink: 0;
         }
 
         .premium-contact-text {
           font-size: 14px;
           font-weight: 600;
-          color: rgba(255, 255, 255, 0.88);
+          color: #1f2937;
           min-width: 0;
           overflow: hidden;
           text-overflow: ellipsis;
