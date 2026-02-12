@@ -86,14 +86,15 @@ export function HomePage() {
 
   const memberContacts = [
     {
-      title: 'Sri Sai Enterprises',
-      subtitle: 'Eco-friendly Bags',
-      description: 'Paper bags, Jute Bags, Cotton Bags',
+      title: 'Jyoti M. Hiremath',
+      subtitle: 'Sri Sai Enterprises',
+      description: 'Eco friendly bags - Paper bags, Jute Bags, Cotton Bags. Manufacturer of all kinds of recycled kraft, handmade, duplex and art paper bags. Supplying all categories like food, clothing and many more. From the last 12 years in Dharwad.',
       contacts: [
         { label: 'Call', value: '+91 9448415428', href: 'tel:+919448415428' },
         { label: 'Call', value: '+91 8073260492', href: 'tel:+918073260492' },
       ],
       accent: 'from-blue-600 to-blue-700',
+      instagram: 'https://www.instagram.com/dharwadbags.official/',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -101,14 +102,15 @@ export function HomePage() {
       ),
     },
     {
-      title: 'Shriwari Food Products',
-      subtitle: 'Home Made Food Products',
-      description: 'Contact: Bharati Upadhyay',
+      title: 'Bharati Upadhyay',
+      subtitle: 'Shrivari Food Products - Home made food',
+      description: 'Madhur Foods and Shrivari Food Products is an authentic Indian snack and treat brand. The brand shares its passion for delicious snacks and traditional treats on Instagram, focusing on wholesome flavors and home-style foods that attract followers who enjoy quality food products.',
       contacts: [
         { label: 'Call', value: '+91 9763571067', href: 'tel:+919763571067' },
         { label: 'Call', value: '+91 6363067161', href: 'tel:+916363067161' },
       ],
       accent: 'from-blue-600 to-blue-700',
+      instagram: 'https://www.instagram.com/madhur_food?igsh=NzJtNHk0Z2diY3Js',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -116,11 +118,12 @@ export function HomePage() {
       ),
     },
     {
-      title: 'Rathi Creations',
-      subtitle: 'Pure Kanjivaram Silk Sarees',
-      description: 'Contact for more details',
+      title: 'Smt Rathi Shrinivasan',
+      subtitle: 'Rathi Creations - Pure Kanjivaram Silk Sarees',
+      description: 'Rathi Creations specializes in authentic Kanjivaram and pure silk sarees, celebrating the richness of traditional South Indian craftsmanship. Known for elegant weaves, vibrant colours, and intricate motifs, the brand offers timeless sarees perfect for weddings, festive occasions, and special celebrations. Each collection reflects a blend of heritage artistry and graceful modern style.',
       contacts: [{ label: 'Call', value: '+91 9448377717', href: 'tel:+919448377717' }],
       accent: 'from-blue-600 to-blue-700',
+      instagram: 'https://www.instagram.com/rathishrinivasan?igsh=cTFrZG9xMXMxcDEy',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
@@ -128,14 +131,15 @@ export function HomePage() {
       ),
     },
     {
-      title: 'Sakhi Creations',
-      subtitle: 'Ethnic Kids Wear',
-      description: 'Contact for more details',
+      title: 'Uma Lakamanahalli',
+      subtitle: 'Sakhi Creations - Ethnic Kids Wear',
+      description: 'Beautiful traditional wear available. Frocks, Lehengas, Long gown pattern dresses. Own production | Premium quality | Custom designs available',
       contacts: [
         { label: 'Call', value: '+91 8867181572', href: 'tel:+918867181572' },
         { label: 'Call', value: '+91 9980956604', href: 'tel:+919980956604' },
       ],
       accent: 'from-blue-600 to-blue-700',
+      instagram: 'https://www.instagram.com/uma_lakamanahalli',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -143,11 +147,12 @@ export function HomePage() {
       ),
     },
     {
-      title: 'Rajeshwari Embroidery Designs',
-      subtitle: 'Hand Embroidery',
-      description: 'Contact for more details',
+      title: 'Rajeshwari Navale',
+      subtitle: 'Navale Fashion Tech - Hand Embroidery',
+      description: 'Navale fashion tech provides exclusive embroidery design to valuable customers and also customises designs. Embroidery design on blouses, bags, cushion covers, sarees and many more. In this unit since 6 years in Dharwad.',
       contacts: [{ label: 'WhatsApp', value: '+91 74116 48633', href: 'https://wa.me/917411648633' }],
       accent: 'from-blue-600 to-blue-700',
+      instagram: 'https://www.instagram.com/rajeshwarinavale?igsh=Znk1anpqd2Y0Z2ti',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -802,6 +807,23 @@ export function HomePage() {
                       </a>
                     ))}
                   </div>
+
+                  {item.instagram && (
+                    <div className="mt-6">
+                      <a
+                        href={item.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="premium-cta gap-2"
+                        aria-label={`Visit ${item.title} on Instagram`}
+                      >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
+                        </svg>
+                        Follow on Instagram
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -1071,15 +1093,13 @@ export function HomePage() {
           font-weight: 800;
           font-size: 14px;
           color: white;
-          background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(190, 18, 60, 0.95));
-          box-shadow: 0 16px 32px rgba(239, 68, 68, 0.32);
-          transition: transform 200ms ease, filter 200ms ease;
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
+          transition: transform 200ms ease;
           white-space: nowrap;
         }
 
         .premium-cta:hover {
           transform: translateY(-1px);
-          filter: brightness(1.04);
         }
 
         @keyframes team-orb-float {
