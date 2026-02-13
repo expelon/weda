@@ -529,7 +529,7 @@ export function HomePage() {
             {/* Event/Award Card 6 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/about.webp" 
+                src="/57.jpeg" 
                 alt="Achievement Ceremony" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
