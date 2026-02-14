@@ -785,6 +785,12 @@ export function HomePage() {
                       <p className="text-sm text-white/90 mt-1">
                         {item.subtitle}
                       </p>
+                      {/* Click here indicator for smaller screens */}
+                      <div className="lg:hidden mt-4">
+                        <span className="text-xs text-white font-medium bg-white/20 px-3 py-1 rounded-full">
+                          Click here
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -846,13 +852,7 @@ export function HomePage() {
                     </div>
                   )}
 
-                  {/* Click here indicator for smaller screens */}
-                  <div className="lg:hidden mt-4 text-center">
-                    <span className="text-xs text-blue-600 font-medium bg-blue-50 px-3 py-1 rounded-full">
-                      Click here
-                    </span>
                   </div>
-                </div>
               </motion.div>
             ))}
           </div>
