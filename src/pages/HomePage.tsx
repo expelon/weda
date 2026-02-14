@@ -282,10 +282,11 @@ export function HomePage() {
               animate={{ opacity: rightVisible ? 1 : 0, y: rightVisible ? 0 : 50 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              <h2 
-                className="text-3xl sm:text-4xl font-bold text-[#2E4A9F] mb-6"
+              <h2
+                className="text-3xl sm:text-4xl font-bold mb-6"
               >
-                Who We Are
+                <span className="text-gray-900">Who We</span>
+                <span className="text-[#2E4A9F]"> Are</span>
               </h2>
               <p 
                 className="text-lg text-gray-600"
@@ -345,7 +346,10 @@ export function HomePage() {
               animate={{ opacity: impactLeftVisible ? 1 : 0, y: impactLeftVisible ? 0 : 50 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-4xl font-bold text-[#2E4A9F] mb-6">Our Impact So Far</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="text-gray-900">Our Impact So</span>
+                <span className="text-red-600"> Far</span>
+              </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Since 2009, WEDA has been actively empowering women entrepreneurs through continuous skill development programs. We organize exhibitions, workshops, and awareness initiatives, create market platforms for women-led businesses, and support the development of eco-friendly and traditional products—enabling sustainable growth and economic independence.
               </p>
@@ -401,7 +405,10 @@ export function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-4xl font-bold text-[#2E4A9F] mb-4">Key Programs</h2>
+              <h2 className="text-4xl font-bold mb-4">
+                <span className="text-gray-900">Key</span>
+                <span className="text-[#2E4A9F]"> Programs</span>
+              </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Our comprehensive programs empower women entrepreneurs with skills and exposure needed for success
               </p>
@@ -487,8 +494,10 @@ export function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2E4A9F] mb-4">
-              Events & Awards
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              <span className="text-[#2E4A9F]">Events</span>
+              <span className="text-gray-900"> &</span>
+              <span className="text-red-600"> Awards</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Celebrating our achievements and showcasing the vibrant events that empower our community
@@ -768,8 +777,9 @@ export function HomePage() {
               <div className="inline-flex items-center justify-center rounded-full border border-blue-600/20 bg-blue-50 px-4 py-2 text-xs font-semibold tracking-wide text-blue-900">
                 Women-Owned Businesses
               </div>
-              <h2 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-blue-900">
-                Contact Our Members
+              <h2 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight">
+                <span className="text-gray-900">Contact Our</span>
+                <span className="text-red-600"> Members</span>
               </h2>
               <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Explore premium products made by our WEDA entrepreneurs and reach out directly to place orders.
@@ -899,7 +909,10 @@ export function HomePage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#2E4A9F] mb-4">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gray-900">Our</span>
+              <span className="text-[#2E4A9F]"> Team</span>
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Meet the dedicated women leading WEDA and empowering our community
             </p>
