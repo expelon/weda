@@ -737,7 +737,7 @@ export function HomePage() {
       </section>
 
       {/* Contact Our Members Section */}
-      <section className="py-20 bg-gradient-to-br from-red-600 to-red-700 relative overflow-hidden">
+      <section className="py-20 bg-white relative overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 premium-grid" />
         <div aria-hidden="true" className="absolute top-8 right-6 w-64 h-64 bg-red-500/20 rounded-full blur-3xl"></div>
         <div aria-hidden="true" className="absolute bottom-10 left-8 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
@@ -750,13 +750,13 @@ export function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide text-white/90 backdrop-blur">
+              <div className="inline-flex items-center justify-center rounded-full border border-blue-600/20 bg-blue-50 px-4 py-2 text-xs font-semibold tracking-wide text-blue-900">
                 Women-Owned Businesses
               </div>
-              <h2 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+              <h2 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-blue-900">
                 Contact Our Members
               </h2>
-              <p className="mt-4 text-base sm:text-lg text-white/85 max-w-3xl mx-auto">
+              <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Explore premium products made by our WEDA entrepreneurs and reach out directly to place orders.
               </p>
             </motion.div>
@@ -766,13 +766,31 @@ export function HomePage() {
             {memberContacts.map((item, index) => (
               <motion.div
                 key={item.title}
-                className="premium-card"
+                className="premium-card group relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <div className="premium-card-inner">
+                {/* Cover Layer - Initially visible, hides on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 z-10 transition-all duration-700 ease-out group-hover:opacity-0 group-hover:translate-y-[-100%] lg:opacity-0 lg:translate-y-[-100%] lg:transition-none lg:duration-0">
+                  <div className="flex items-center justify-center h-full">
+                    <div className="text-center">
+                      <div className={`premium-icon bg-gradient-to-br ${item.accent} mx-auto mb-4`}>
+                        {item.icon}
+                      </div>
+                      <h3 className="text-lg font-bold text-white leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-white/90 mt-1">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Layer - Initially hidden, shows on hover */}
+                <div className="premium-card-inner opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 lg:opacity-100 lg:translate-y-0 lg:transition-none lg:duration-0">
                   <div className="flex items-start gap-4">
                     <div className={`premium-icon bg-gradient-to-br ${item.accent}`}>
                       {item.icon}
