@@ -34,6 +34,7 @@ const useScrollAnimation = () => {
 export function HomePage() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [revealedCards, setRevealedCards] = useState<Set<string>>(new Set());
   const navigate = useNavigate();
   
   // Scroll animation hooks for Who We Are section
@@ -60,7 +61,7 @@ export function HomePage() {
 
     // Check if mobile screen
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024); // Use lg breakpoint (1024px)
     };
     
     checkMobile();
@@ -82,6 +83,20 @@ export function HomePage() {
       // Open in new tab on desktop
       window.open('/brochure.pdf', '_blank');
     }
+  };
+
+  const handleCardClick = (cardTitle: string) => {
+    if (window.innerWidth >= 1024) return; // Don't handle clicks on lg+ screens
+    
+    setRevealedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(cardTitle)) {
+        newSet.delete(cardTitle);
+      } else {
+        newSet.add(cardTitle);
+      }
+      return newSet;
+    });
   };
 
   const memberContacts = [
@@ -763,17 +778,26 @@ export function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-            {memberContacts.map((item, index) => (
+            {memberContacts.map((item, index) => {
+              const isRevealed = revealedCards.has(item.title);
+              const isMobileScreen = window.innerWidth < 1024;
+              
+              return (
               <motion.div
                 key={item.title}
-                className="premium-card group relative overflow-hidden"
+                className="premium-card group relative overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+                onClick={() => handleCardClick(item.title)}
               >
-                {/* Cover Layer - Initially visible, hides on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 z-10 transition-all duration-700 ease-out group-hover:opacity-0 group-hover:translate-y-[-100%]">
+                {/* Cover Layer - Initially visible, hides on hover/click */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 z-10 transition-all duration-700 ease-out ${
+                  isMobileScreen 
+                    ? (isRevealed ? 'opacity-0 translate-y-[-100%]' : 'opacity-100 translate-y-0')
+                    : 'group-hover:opacity-0 group-hover:translate-y-[-100%]'
+                }`}>
                   <div className="flex items-center justify-center h-full">
                     <div className="text-center">
                       <div className={`premium-icon bg-gradient-to-br ${item.accent} mx-auto mb-4`}>
@@ -788,15 +812,19 @@ export function HomePage() {
                       {/* Click here indicator for smaller screens */}
                       <div className="lg:hidden mt-4">
                         <span className="text-xs text-white font-medium bg-white/20 px-3 py-1 rounded-full">
-                          Click here
+                          {isRevealed ? 'Click to hide' : 'Click here'}
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Content Layer - Initially hidden, shows on hover */}
-                <div className="premium-card-inner opacity-100 lg:opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 lg:translate-y-4 lg:group-hover:translate-y-0">
+                {/* Content Layer - Initially hidden, shows on hover/click */}
+                <div className={`premium-card-inner transition-all duration-700 ease-out ${
+                  isMobileScreen
+                    ? (isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')
+                    : 'lg:opacity-0 lg:translate-y-4 group-hover:lg:opacity-100 group-hover:lg:translate-y-0 opacity-100 translate-y-0'
+                }`}>
                   <div className="flex items-start gap-4">
                     <div className={`premium-icon bg-gradient-to-br ${item.accent}`}>
                       {item.icon}
@@ -825,6 +853,7 @@ export function HomePage() {
                         target={c.href.startsWith('http') ? '_blank' : undefined}
                         rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="premium-contact"
+                        onClick={(e) => e.stopPropagation()} // Prevent card click
                       >
                         <span className="premium-contact-pill">{c.label}</span>
                         <span className="premium-contact-text">{c.value}</span>
@@ -840,6 +869,7 @@ export function HomePage() {
                         rel="noopener noreferrer"
                         className="premium-cta gap-2"
                         aria-label={`Visit ${item.title} on Instagram`}
+                        onClick={(e) => e.stopPropagation()} // Prevent card click
                       >
                         <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
                           <path
@@ -854,7 +884,8 @@ export function HomePage() {
 
                   </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
