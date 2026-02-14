@@ -803,7 +803,7 @@ export function HomePage() {
                 onClick={() => handleCardClick(item.title)}
               >
                 {/* Cover Layer - Initially visible, hides on hover/click */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 z-10 transition-all duration-700 ease-out ${
+                <div className={`absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 z-10 transition-all duration-700 ease-out ${
                   isMobileScreen 
                     ? (isRevealed ? 'opacity-0 translate-y-[-100%]' : 'opacity-100 translate-y-0')
                     : 'group-hover:opacity-0 group-hover:translate-y-[-100%]'
