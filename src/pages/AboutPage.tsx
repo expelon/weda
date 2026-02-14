@@ -81,7 +81,7 @@ export function AboutPage() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/about.webp')" }}
+          style={{ backgroundImage: "url('/58.jpeg')" }}
         />
         
         {/* Gradient Overlay - Darker Blue on Left */}
