@@ -773,7 +773,7 @@ export function HomePage() {
                 transition={{ duration: 0.7, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 {/* Cover Layer - Initially visible, hides on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 z-10 transition-all duration-700 ease-out group-hover:opacity-0 group-hover:translate-y-[-100%] lg:opacity-0 lg:translate-y-[-100%] lg:transition-none lg:duration-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 z-10 transition-all duration-700 ease-out group-hover:opacity-0 group-hover:translate-y-[-100%]">
                   <div className="flex items-center justify-center h-full">
                     <div className="text-center">
                       <div className={`premium-icon bg-gradient-to-br ${item.accent} mx-auto mb-4`}>
@@ -790,7 +790,7 @@ export function HomePage() {
                 </div>
 
                 {/* Content Layer - Initially hidden, shows on hover */}
-                <div className="premium-card-inner opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 lg:opacity-100 lg:translate-y-0 lg:transition-none lg:duration-0">
+                <div className="premium-card-inner opacity-100 lg:opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 lg:translate-y-4 lg:group-hover:translate-y-0">
                   <div className="flex items-start gap-4">
                     <div className={`premium-icon bg-gradient-to-br ${item.accent}`}>
                       {item.icon}
@@ -845,6 +845,13 @@ export function HomePage() {
                       </a>
                     </div>
                   )}
+
+                  {/* Click here indicator for smaller screens */}
+                  <div className="lg:hidden mt-4 text-center">
+                    <span className="text-xs text-blue-600 font-medium bg-blue-50 px-3 py-1 rounded-full">
+                      Click here
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             ))}
