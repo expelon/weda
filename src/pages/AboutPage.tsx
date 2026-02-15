@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function AboutPage() {
   // Scroll to top when component mounts
@@ -77,34 +78,86 @@ export function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50/30">
       {/* Hero Section with About Image */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/58.jpeg')" }}
-        />
-        
-        {/* Gradient Overlay - Darker Blue on Left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/80 to-red-700/60" />
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-12 bg-gradient-to-br from-gray-50 to-orange-50/30">
+        {/* Decorative Blurred Elements */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl z-0"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl z-0"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div className="text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                className="inline-flex items-center justify-center lg:justify-start mb-6"
+              >
+                <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-gray-700 shadow-sm">
+                  North Karnataka WEDA
+                </span>
+              </motion.div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col items-center justify-center text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+              >
+                About <span className="text-[#2E4A9F]">WEDA</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+                className="text-lg sm:text-xl text-gray-600 max-w-2xl lg:max-w-none leading-relaxed mb-8"
+              >
+                Empowering Women Entrepreneurs of <span className="text-red-600 font-bold">North Karnataka</span> Since 2009
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                className="text-base sm:text-lg text-gray-600 leading-relaxed"
+              >
+                WEDA is a <span className="font-semibold text-gray-900">non-profit organization</span> established in 2009, registered under Charitable Acts of 1960/17. It serves as a platform for women entrepreneurs to develop capabilities, access training, and gain market exposure, with <span className="font-semibold text-gray-900">15+ years</span> of empowering women.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                className="mt-10"
+              >
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Contact Us
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              className="relative"
             >
-              About WEDA
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed"
-            >
-              Empowering Women Entrepreneurs of <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent font-bold drop-shadow-lg">North Karnataka</span> Since 2009
-            </motion.p>
+              <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl">
+                <div className="aspect-[16/10]">
+                  <img
+                    src="/58.jpeg"
+                    alt="About WEDA"
+                    className="h-full w-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

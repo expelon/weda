@@ -11,10 +11,9 @@ export function Header({ currentPath }: HeaderProps) {
   const location = useLocation();
   const activePath = currentPath || location.pathname;
   
-  // Determine if we're on pages with hero sections (home or about)
+  // Determine if we're on pages with hero sections (home only)
   const isHomePage = activePath === '/';
-  const isAboutPage = activePath === '/about';
-  const hasHeroSection = isHomePage || isAboutPage;
+  const hasHeroSection = isHomePage; // Only home page has dark hero section
   const textColorClass = hasHeroSection ? 'text-white' : 'text-gray-900';
   const hoverColorClass = hasHeroSection ? 'hover:text-white/90' : 'hover:text-gray-900';
   const borderClass = hasHeroSection ? 'border-white' : 'border-gray-900';
@@ -78,7 +77,7 @@ export function Header({ currentPath }: HeaderProps) {
           <div className="hidden md:flex">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-[#2E4A9F] text-white px-5 py-2 text-base font-semibold hover:bg-[#1E3A7F] transition-colors duration-300"
+              className="inline-flex items-center justify-center rounded-lg bg-red-600 text-white px-5 py-2 text-base font-semibold hover:bg-red-700 transition-colors duration-300"
             >
               Register
             </Link>
@@ -163,7 +162,7 @@ export function Header({ currentPath }: HeaderProps) {
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#2E4A9F] text-white px-6 py-2.5 text-lg font-semibold mt-8 hover:bg-[#1E3A7F] transition-colors duration-300"
+                  className="inline-flex items-center justify-center rounded-lg bg-red-600 text-white px-6 py-2.5 text-lg font-semibold mt-8 hover:bg-red-700 transition-colors duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Register
